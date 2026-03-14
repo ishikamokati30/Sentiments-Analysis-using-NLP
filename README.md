@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Sentiment Analysis Platform
 
 Full-stack sentiment analysis project using a scikit-learn SVM model, Flask inference API, Express proxy backend, and a React analytics frontend.
@@ -58,3 +59,17 @@ npm run dev
 =======
 # Sentiments-Analysis-using-NLP
 >>>>>>> 7bc2ec463f57e9e04672a5e42e6905f0c2ca5720
+=======
+# Sentiment Analysis using NLP
+
+This project implements a full-stack sentiment analysis system using:
+
+- React frontend
+- Node.js backend
+- Flask ML API
+- TF-IDF + SVM model
+
+Architecture:
+
+React → Express
+>>>>>>> fb01d6576a9c2c2a7e4950840d677d6362f1ea90
