@@ -1,75 +1,132 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-# Sentiment Analysis Platform
+# 🧠 Sentiment Analysis Platform
 
-Full-stack sentiment analysis project using a scikit-learn SVM model, Flask inference API, Express proxy backend, and a React analytics frontend.
+A full-stack **Sentiment Analysis Web Application** that analyzes user input text and classifies it as **Positive, Negative, or Neutral** using Machine Learning models.
 
-## Folder structure
+---
 
-```text
-sentiment-analysis-platform
-|-- ml-model
-|   |-- sentiment_model.pkl
-|   `-- vectorizer.pkl
-|-- python-api
-|   |-- app.py
-|   |-- requirements.txt
-|   |-- services
-|   |   `-- sentiment_service.py
-|   `-- utils
-|       `-- preprocessing.py
-|-- backend
-|   |-- package.json
-|   `-- server.js
-`-- frontend
-    |-- package.json
-    |-- vite.config.js
-    `-- src
-```
+## 🚀 Features
 
-## Run commands
+* ✍️ Input text and get real-time sentiment prediction
+* 🧠 ML model trained for sentiment classification
+* 🌐 Full-stack architecture (Frontend + Backend + ML API)
+* ⚡ Fast API integration using Python
+* 📊 Clean and interactive UI
 
-### 1. Flask API
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+* React.js
+* HTML, CSS, JavaScript
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Machine Learning
+
+* Python
+* NLP (Natural Language Processing)
+* TensorFlow / Scikit-learn
+
+### API Layer
+
+* Flask / FastAPI
+
+---
+
+## 📂 Project Structure
 
 ```bash
-cd python-api
-pip install -r requirements.txt
-flask --app app run --debug --port 5000
+Sentiments-Analysis-using-NLP/
+│── frontend/        # React frontend
+│── backend/         # Node.js backend
+│── python-api/      # ML model API (Flask/FastAPI)
+│── ml-model/        # Model training files
+│── sentiment_model.ipynb  # Training notebook
+│── README.md
 ```
 
-### 2. Express backend
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone Repository
 
 ```bash
-cd backend
-npm install
-npm run dev
+git clone https://github.com/your-username/Sentiments-Analysis-using-NLP.git
+cd Sentiments-Analysis-using-NLP
 ```
 
-### 3. React frontend
+---
+
+## ▶️ Run Frontend
 
 ```bash
 cd frontend
 npm install
-npm run dev
+npm start
 ```
 
-## API flow
+---
 
-`React -> Express (/analyze) -> Flask (/predict) -> sklearn model`
-=======
-# Sentiments-Analysis-using-NLP
->>>>>>> 7bc2ec463f57e9e04672a5e42e6905f0c2ca5720
-=======
-# Sentiment Analysis using NLP
+## ▶️ Run Backend
 
-This project implements a full-stack sentiment analysis system using:
+```bash
+cd backend
+npm install
+node index.js
+```
 
-- React frontend
-- Node.js backend
-- Flask ML API
-- TF-IDF + SVM model
+---
 
-Architecture:
+## ▶️ Run ML API
 
-React → Express
->>>>>>> fb01d6576a9c2c2a7e4950840d677d6362f1ea90
+```bash
+cd python-api
+pip install -r requirements.txt
+python app.py
+```
+
+---
+
+## 🧪 Model Training
+
+Open Jupyter Notebook:
+
+```bash
+jupyter notebook sentiment_model.ipynb
+```
+
+---
+
+## 🔗 How It Works
+
+1. User enters text in frontend
+2. Request goes to Node.js backend
+3. Backend calls Python ML API
+4. Model predicts sentiment
+5. Result sent back to frontend
+
+---
+
+## 📸 Screenshots (Add if possible)
+
+* Home Page
+* Input Text UI
+* Prediction Result
+
+---
+
+## 💡 Future Improvements
+
+* Add emotion detection (happy, sad, angry)
+* Deploy on cloud (AWS / Render)
+* Improve model accuracy
+* Add user authentication
+
+---
+
