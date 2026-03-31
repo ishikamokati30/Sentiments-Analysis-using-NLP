@@ -1,132 +1,152 @@
-# 🧠 Sentiment Analysis Platform
+# Sentiment Analysis Web App
 
-A full-stack **Sentiment Analysis Web Application** that analyzes user input text and classifies it as **Positive, Negative, or Neutral** using Machine Learning models.
+A full-stack web application that analyzes user input text and classifies it as **Positive** or **Negative** using Natural Language Processing (NLP).
 
 ---
 
 ## 🚀 Features
 
-* ✍️ Input text and get real-time sentiment prediction
-* 🧠 ML model trained for sentiment classification
-* 🌐 Full-stack architecture (Frontend + Backend + ML API)
-* ⚡ Fast API integration using Python
-* 📊 Clean and interactive UI
+- 🔍 Real-time sentiment analysis
+- ⚡ Fast and lightweight (Node.js-based, no Python/Flask)
+- 🎯 Simple and clean UI
+- 🌐 REST API integration
 
 ---
 
-## 🛠️ Tech Stack
+## 🏗️ Tech Stack
 
 ### Frontend
 
-* React.js
-* HTML, CSS, JavaScript
+- React (Vite)
+- Axios
 
 ### Backend
 
-* Node.js
-* Express.js
-
-### Machine Learning
-
-* Python
-* NLP (Natural Language Processing)
-* TensorFlow / Scikit-learn
-
-### API Layer
-
-* Flask / FastAPI
+- Node.js
+- Express.js
+- Sentiment (NPM NLP library)
 
 ---
 
 ## 📂 Project Structure
 
-```bash
-Sentiments-Analysis-using-NLP/
-│── frontend/        # React frontend
-│── backend/         # Node.js backend
-│── python-api/      # ML model API (Flask/FastAPI)
-│── ml-model/        # Model training files
-│── sentiment_model.ipynb  # Training notebook
-│── README.md
+```
+Sentiment_Analysis/
+│
+├── backend/
+│   ├── server.js
+│   └── package.json
+│
+├── frontend/
+│   ├── src/
+│   └── package.json
+│
+└── README.md
 ```
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 1. Clone Repository
+### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/your-username/Sentiments-Analysis-using-NLP.git
+git clone https://github.com/ishikamokati30/Sentiments-Analysis-using-NLP.git
 cd Sentiments-Analysis-using-NLP
 ```
 
 ---
 
-## ▶️ Run Frontend
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
----
-
-## ▶️ Run Backend
+### 2️⃣ Setup Backend
 
 ```bash
 cd backend
 npm install
-node index.js
+node server.js
+```
+
+Backend runs on:
+
+```
+http://localhost:4000
 ```
 
 ---
 
-## ▶️ Run ML API
+### 3️⃣ Setup Frontend
+
+Open new terminal:
 
 ```bash
-cd python-api
-pip install -r requirements.txt
-python app.py
+cd frontend
+npm install
+npm run dev
+```
+
+Frontend runs on:
+
+```
+http://localhost:5173
 ```
 
 ---
 
-## 🧪 Model Training
+## 📡 API Endpoint
 
-Open Jupyter Notebook:
+### POST `/analyze`
 
-```bash
-jupyter notebook sentiment_model.ipynb
+#### Request:
+
+```json
+{
+  "text": "I love this project"
+}
+```
+
+#### Response:
+
+```json
+{
+  "sentiment": "positive"
+}
 ```
 
 ---
 
-## 🔗 How It Works
+## 🧠 How It Works
 
-1. User enters text in frontend
-2. Request goes to Node.js backend
-3. Backend calls Python ML API
-4. Model predicts sentiment
-5. Result sent back to frontend
-
----
-
-## 📸 Screenshots (Add if possible)
-
-* Home Page
-* Input Text UI
-* Prediction Result
+- User inputs text from frontend
+- Request is sent to Node.js backend
+- Backend analyzes sentiment using NLP library
+- Result is returned and displayed
 
 ---
 
-## 💡 Future Improvements
+## 🔄 Recent Updates
 
-* Add emotion detection (happy, sad, angry)
-* Deploy on cloud (AWS / Render)
-* Improve model accuracy
-* Add user authentication
+- ❌ Removed Flask (Python backend)
+- ✅ Implemented Node.js-based sentiment analysis
+- ✅ Simplified architecture
 
 ---
 
+## 📌 Future Improvements
+
+- Add emotion detection (happy, angry, sad)
+- Add confidence score
+- Add word-level explainability
+- Dashboard with sentiment trends
+
+---
+
+## 👩‍💻 Author
+
+**Ishika Mokati**
+
+---
+
+## ⭐ Contribute
+
+Feel free to fork the repo and submit pull requests!
+
+---
