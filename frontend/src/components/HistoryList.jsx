@@ -14,11 +14,11 @@ function HistoryList({ history }) {
                 <strong>{item.sentiment}</strong>
                 <p>{item.text}</p>
               </div>
-              <span>{item.confidence}%</span>
+              <span>{new Date(item.timestamp).toLocaleString()}</span>
             </article>
           ))
         ) : (
-          <p className="muted-text">Run an analysis to populate the dashboard history.</p>
+          <p className="muted-text">No analysis yet</p>
         )}
       </div>
     </section>

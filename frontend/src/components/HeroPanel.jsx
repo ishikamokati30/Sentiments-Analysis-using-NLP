@@ -2,11 +2,11 @@ function HeroPanel({ stats }) {
   return (
     <section className="hero-grid">
       <div className="hero-copy">
-        <p className="eyebrow">Portfolio-ready AI application</p>
-        <h2>Operational sentiment scoring with an analytics-first interface</h2>
+        <p className="eyebrow">Sentiment analyzer</p>
+        <h2>Analyze text and return a simple positive or negative result</h2>
         <p>
-          Use the analyzer to classify text through the trained SVM pipeline, then review
-          aggregate sentiment movement on the dashboard.
+          Submit text to the backend and review the latest sentiment response without
+          extra analytics or model metadata.
         </p>
       </div>
 

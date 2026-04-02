@@ -1,7 +1,6 @@
 import { useMemo, useState } from "react";
 
 import { analyzeText } from "../api/sentimentApi";
-import ConfidenceMeter from "../components/ConfidenceMeter";
 import HeroPanel from "../components/HeroPanel";
 import HistoryList from "../components/HistoryList";
 import ResultCard from "../components/ResultCard";
@@ -15,8 +14,8 @@ function HomePage({ history, onAnalyze }) {
   const [error, setError] = useState("");
 
   const stats = useMemo(() => {
-    const positives = history.filter((item) => item.sentiment === "Positive").length;
-    const negatives = history.filter((item) => item.sentiment === "Negative").length;
+    const positives = history.filter((item) => item.sentiment === "positive").length;
+    const negatives = history.filter((item) => item.sentiment === "negative").length;
 
     return {
       total: history.length,
@@ -36,14 +35,23 @@ function HomePage({ history, onAnalyze }) {
 
     try {
       const payload = await analyzeText(text);
-      setResult(payload);
+
+      const nextResult = {
+        sentiment: typeof payload?.sentiment === "string" ? payload.sentiment.trim().toLowerCase() : "",
+      };
+
+      if (!nextResult.sentiment) {
+        throw new Error("Invalid API response.");
+      }
+
+      setResult(nextResult);
       onAnalyze({
-        ...payload,
+        ...nextResult,
         text,
-        timestamp: payload.analyzedAt || new Date().toISOString(),
+        timestamp: new Date().toISOString(),
       });
     } catch (requestError) {
-      setError(requestError.response?.data?.error || "Request failed.");
+      setError(requestError.response?.data?.error || requestError.message || "Request failed.");
     } finally {
       setLoading(false);
     }
@@ -78,7 +86,6 @@ function HomePage({ history, onAnalyze }) {
 
         <div className="result-grid">
           <ResultCard result={result} />
-          <ConfidenceMeter result={result} />
         </div>
       </div>
 

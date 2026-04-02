@@ -6,10 +6,39 @@ import DashboardPage from "./pages/DashboardPage";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
 
+function normalizeHistoryEntry(entry) {
+  if (!entry || typeof entry !== "object") {
+    return null;
+  }
+
+  const sentiment =
+    typeof entry.sentiment === "string" ? entry.sentiment.trim().toLowerCase() : "";
+
+  if (!sentiment) {
+    return null;
+  }
+
+  return {
+    sentiment,
+    text: typeof entry.text === "string" ? entry.text : "",
+    timestamp: typeof entry.timestamp === "string" ? entry.timestamp : new Date().toISOString(),
+  };
+}
+
 function App() {
   const [history, setHistory] = useState(() => {
     const saved = window.localStorage.getItem("sentiment-history");
-    return saved ? JSON.parse(saved) : [];
+
+    if (!saved) {
+      return [];
+    }
+
+    try {
+      const parsed = JSON.parse(saved);
+      return Array.isArray(parsed) ? parsed.map(normalizeHistoryEntry).filter(Boolean) : [];
+    } catch {
+      return [];
+    }
   });
 
   useEffect(() => {
@@ -17,7 +46,13 @@ function App() {
   }, [history]);
 
   const appendHistory = (entry) => {
-    setHistory((current) => [entry, ...current].slice(0, 12));
+    const normalizedEntry = normalizeHistoryEntry(entry);
+
+    if (!normalizedEntry) {
+      return;
+    }
+
+    setHistory((current) => [normalizedEntry, ...current].slice(0, 12));
   };
 
   return (
