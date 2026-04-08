@@ -38,9 +38,10 @@ function HomePage({ history, onAnalyze }) {
 
       const nextResult = {
         sentiment: typeof payload?.sentiment === "string" ? payload.sentiment.trim().toLowerCase() : "",
+        mood: typeof payload?.mood === "string" ? payload.mood.trim() : "",
       };
 
-      if (!nextResult.sentiment) {
+      if (!nextResult.sentiment || !nextResult.mood) {
         throw new Error("Invalid API response.");
       }
 
@@ -79,7 +80,7 @@ function HomePage({ history, onAnalyze }) {
           <button type="button" onClick={handleAnalyze} disabled={loading}>
             {loading ? "Analyzing..." : "Analyze Sentiment"}
           </button>
-          <span className="helper-text">Flow: React -> Express -> Flask -> sklearn model</span>
+          <span className="helper-text">Flow: React -> Express sentiment + mood analysis</span>
         </div>
 
         {error ? <p className="error-text">{error}</p> : null}

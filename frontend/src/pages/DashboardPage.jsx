@@ -39,6 +39,7 @@ function DashboardPage({ history }) {
           <h2>Most recent result</h2>
         </div>
         <p className="result-meta">Sentiment: <span className="sentiment-badge">{latestResult.sentiment}</span></p>
+        <p className="result-meta">Mood: <span className="sentiment-badge">{latestResult.mood || "Neutral 😐"}</span></p>
       </div>
 
       <HistoryList history={history} />

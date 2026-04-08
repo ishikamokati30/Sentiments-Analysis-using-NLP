@@ -8,12 +8,22 @@ function ResultCard({ result }) {
     );
   }
 
-  const toneClass = result.sentiment === "positive" ? "positive" : "negative";
+  const toneClass =
+    result.sentiment === "positive"
+      ? "positive"
+      : result.sentiment === "negative"
+        ? "negative"
+        : "neutral";
 
   return (
     <article className={`result-card ${toneClass}`}>
       <h3>Result</h3>
-      {result && <p className="result-meta">Sentiment: <span className="sentiment-badge">{result.sentiment}</span></p>}
+      <p className="result-meta">
+        Sentiment: <span className="sentiment-badge">{result.sentiment}</span>
+      </p>
+      <p className="result-meta">
+        Mood: <span className="sentiment-badge">{result.mood}</span>
+      </p>
     </article>
   );
 }

@@ -20,6 +20,7 @@ function normalizeHistoryEntry(entry) {
 
   return {
     sentiment,
+    mood: typeof entry.mood === "string" ? entry.mood.trim() : "Neutral 😐",
     text: typeof entry.text === "string" ? entry.text : "",
     timestamp: typeof entry.timestamp === "string" ? entry.timestamp : new Date().toISOString(),
   };
