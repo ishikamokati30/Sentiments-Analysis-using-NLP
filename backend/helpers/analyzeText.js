@@ -1,7 +1,7 @@
-const { runLocalAdvancedAnalysis, createLegacyAnalysis } = require("../services/nlpService");
+const { runAdvancedAnalysis, createLegacyAnalysis } = require("../services/nlpService");
 
-function analyzeText(text) {
-  const advanced = runLocalAdvancedAnalysis(text);
+async function analyzeText(text) {
+  const advanced = await runAdvancedAnalysis(text);
   return createLegacyAnalysis(advanced);
 }
 

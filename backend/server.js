@@ -44,14 +44,19 @@ function parseCsvContent(csvContent) {
     .filter((value) => typeof value === "string" && value.trim());
 }
 
-function handleAnalyze(req, res) {
+async function handleAnalyze(req, res) {
   const { text } = req.body || {};
 
   if (!validateTextInput(text)) {
     return res.status(400).json({ error: "A non-empty 'text' field is required." });
   }
 
-  return res.json(analyzeText(text));
+  try {
+    const result = await analyzeText(text);
+    return res.json(result);
+  } catch {
+    return res.status(500).json({ error: "Analysis failed." });
+  }
 }
 
 app.post("/analyze", handleAnalyze);

@@ -1,5 +1,939 @@
 [
   {
+    "text": "maiii bohot khush huuu",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "maiii",
+        "impact": "neutral",
+        "importance": 2.15
+      },
+      {
+        "word": "bohot",
+        "impact": "neutral",
+        "importance": 2.15
+      },
+      {
+        "word": "khush",
+        "impact": "neutral",
+        "importance": 2.15
+      },
+      {
+        "word": "huuu",
+        "impact": "neutral",
+        "importance": 2.15
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "maiii",
+          "label": "neutral",
+          "weight": 2.15
+        },
+        {
+          "word": "bohot",
+          "label": "neutral",
+          "weight": 2.15
+        },
+        {
+          "word": "khush",
+          "label": "neutral",
+          "weight": 2.15
+        },
+        {
+          "word": "huuu",
+          "label": "neutral",
+          "weight": 2.15
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "maiii",
+        "count": 1
+      },
+      {
+        "value": "bohot",
+        "count": 1
+      },
+      {
+        "value": "khush",
+        "count": 1
+      },
+      {
+        "value": "huuu",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-14T08:25:55.765Z"
+  },
+  {
+    "text": "Food was delicious, but the service was very slow.",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -0.33,
+    "sentimentScore": -0.33,
+    "confidence": 0.6667,
+    "probabilities": {
+      "positive": 0.1389,
+      "neutral": 0.1944,
+      "negative": 0.6667
+    },
+    "language": "english",
+    "mood": "Angry 😡",
+    "emotions": {
+      "primary": "angry",
+      "distribution": {
+        "happy": 0.1026,
+        "sad": 0.1538,
+        "angry": 0.3077,
+        "fear": 0.1795,
+        "surprise": 0.1026,
+        "neutral": 0.1538
+      }
+    },
+    "emotionScores": {
+      "happy": 0.1026,
+      "sad": 0.1538,
+      "angry": 0.3077,
+      "fear": 0.1795,
+      "surprise": 0.1026,
+      "neutral": 0.1538
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0.16,
+      "reasons": [
+        "negative-context:slow"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "food",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "delicious",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "service",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.5,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "slow",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.5,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "slow",
+        "impact": "negative",
+        "importance": 2.0445
+      },
+      {
+        "word": "food",
+        "impact": "negative",
+        "importance": 1.8445
+      },
+      {
+        "word": "delicious",
+        "impact": "negative",
+        "importance": 1.8445
+      },
+      {
+        "word": "service",
+        "impact": "negative",
+        "importance": 1.8445
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "slow",
+          "label": "negative",
+          "weight": 2.0445
+        },
+        {
+          "word": "food",
+          "label": "negative",
+          "weight": 1.8445
+        },
+        {
+          "word": "delicious",
+          "label": "negative",
+          "weight": 1.8445
+        },
+        {
+          "word": "service",
+          "label": "negative",
+          "weight": 1.8445
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "food",
+        "count": 1
+      },
+      {
+        "value": "delicious",
+        "count": 1
+      },
+      {
+        "value": "service",
+        "count": 1
+      },
+      {
+        "value": "slow",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -0.33,
+        "confidence": 0.6667,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -0.33,
+        "confidence": 0.6667,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -0.33,
+        "confidence": 0.6667,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-14T07:20:26.529Z"
+  },
+  {
+    "text": "\"Best product ever!!! Must buy!!! 100% guaranteed!!!\"",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "High",
+      "isSpam": true,
+      "confidence": 0.5,
+      "reasons": [
+        "promotional-language",
+        "repeated-exclamation"
+      ]
+    },
+    "aspects": [
+      {
+        "aspect": "best",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "best product",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "product",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "product ever",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "ever",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      }
+    ],
+    "keywords": [
+      {
+        "word": "best",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "product",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "ever",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "must",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "buy",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "100",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "guaranteed",
+        "impact": "neutral",
+        "importance": 1.7857
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "best",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "product",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "ever",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "must",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "buy",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "100",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "guaranteed",
+          "label": "neutral",
+          "weight": 1.7857
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "best",
+        "count": 1
+      },
+      {
+        "value": "product",
+        "count": 1
+      },
+      {
+        "value": "ever",
+        "count": 1
+      },
+      {
+        "value": "must",
+        "count": 1
+      },
+      {
+        "value": "buy",
+        "count": 1
+      },
+      {
+        "value": "100",
+        "count": 1
+      },
+      {
+        "value": "guaranteed",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-14T07:20:09.570Z"
+  },
+  {
+    "text": "I’m extremely happy with the results!",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "extremely",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "happy",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "results",
+        "impact": "neutral",
+        "importance": 1.7857
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "extremely",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "happy",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "results",
+          "label": "neutral",
+          "weight": 1.7857
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "extremely",
+        "count": 1
+      },
+      {
+        "value": "happy",
+        "count": 1
+      },
+      {
+        "value": "results",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-14T07:19:24.445Z"
+  },
+  {
+    "text": "Wow, just what I needed… a slower app",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -0.38,
+    "sentimentScore": -0.38,
+    "confidence": 0.6875,
+    "probabilities": {
+      "positive": 0.125,
+      "neutral": 0.1875,
+      "negative": 0.6875
+    },
+    "language": "english",
+    "mood": "Angry 😡",
+    "emotions": {
+      "primary": "angry",
+      "distribution": {
+        "happy": 0.1026,
+        "sad": 0.1538,
+        "angry": 0.3077,
+        "fear": 0.1795,
+        "surprise": 0.1026,
+        "neutral": 0.1538
+      }
+    },
+    "emotionScores": {
+      "happy": 0.1026,
+      "sad": 0.1538,
+      "angry": 0.3077,
+      "fear": 0.1795,
+      "surprise": 0.1026,
+      "neutral": 0.1538
+    },
+    "sarcasm": {
+      "level": "High",
+      "isSarcastic": true,
+      "confidence": 1,
+      "reasons": [
+        "wow",
+        "just what i needed",
+        "negative-context:slow",
+        "negative-context:slower",
+        "sentiment-mismatch",
+        "ellipsis-tone"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "wow",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "slower",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.5,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "slower app",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.5,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "app",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.5,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "wow",
+        "impact": "sarcastic",
+        "importance": 2.1925
+      },
+      {
+        "word": "slower",
+        "impact": "negative",
+        "importance": 2.1125
+      },
+      {
+        "word": "app",
+        "impact": "negative",
+        "importance": 1.9125
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "wow",
+          "label": "negative",
+          "weight": 2.1925
+        },
+        {
+          "word": "slower",
+          "label": "negative",
+          "weight": 2.1125
+        },
+        {
+          "word": "app",
+          "label": "negative",
+          "weight": 1.9125
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "wow",
+        "count": 1
+      },
+      {
+        "value": "slower",
+        "count": 1
+      },
+      {
+        "value": "app",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-14T07:18:49.954Z"
+  },
+  {
+    "text": "Wow, just what I needed… a slower app",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -0.38,
+    "sentimentScore": -0.38,
+    "confidence": 0.6875,
+    "probabilities": {
+      "positive": 0.125,
+      "neutral": 0.1875,
+      "negative": 0.6875
+    },
+    "language": "english",
+    "mood": "Angry 😡",
+    "emotions": {
+      "primary": "angry",
+      "distribution": {
+        "happy": 0.1026,
+        "sad": 0.1538,
+        "angry": 0.3077,
+        "fear": 0.1795,
+        "surprise": 0.1026,
+        "neutral": 0.1538
+      }
+    },
+    "emotionScores": {
+      "happy": 0.1026,
+      "sad": 0.1538,
+      "angry": 0.3077,
+      "fear": 0.1795,
+      "surprise": 0.1026,
+      "neutral": 0.1538
+    },
+    "sarcasm": {
+      "level": "High",
+      "isSarcastic": true,
+      "confidence": 1,
+      "reasons": [
+        "wow",
+        "just what i needed",
+        "negative-context:slow",
+        "negative-context:slower",
+        "sentiment-mismatch",
+        "ellipsis-tone"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "wow",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "slower",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.5,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "slower app",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.5,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "app",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.5,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "wow",
+        "impact": "sarcastic",
+        "importance": 2.1925
+      },
+      {
+        "word": "slower",
+        "impact": "negative",
+        "importance": 2.1125
+      },
+      {
+        "word": "app",
+        "impact": "negative",
+        "importance": 1.9125
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "wow",
+          "label": "negative",
+          "weight": 2.1925
+        },
+        {
+          "word": "slower",
+          "label": "negative",
+          "weight": 2.1125
+        },
+        {
+          "word": "app",
+          "label": "negative",
+          "weight": 1.9125
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "wow",
+        "count": 1
+      },
+      {
+        "value": "slower",
+        "count": 1
+      },
+      {
+        "value": "app",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-14T07:18:44.143Z"
+  },
+  {
     "text": "Wow, just what I needed… a slower app",
     "sentiment": "positive",
     "sentimentScore": 1,

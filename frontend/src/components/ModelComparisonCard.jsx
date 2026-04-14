@@ -1,8 +1,10 @@
+import { motion } from "framer-motion";
+
 function MetricRow({ label, value }) {
   return (
-    <div className="metric-inline">
+    <div className="flex items-center justify-between gap-4 text-sm text-slate-600 dark:text-slate-300">
       <span>{label}</span>
-      <strong>{value}</strong>
+      <strong className="text-slate-900 dark:text-white">{value}</strong>
     </div>
   );
 }
@@ -19,53 +21,27 @@ function ModelComparisonCard({ comparison }) {
   ];
 
   return (
-    <section className="card">
-      <div className="section-heading">
-        <p className="eyebrow">Model Comparison</p>
-        <h2>Estimated benchmark snapshot</h2>
-      </div>
+    <section className="rounded-[2rem] border border-white/20 bg-white/55 p-6 shadow-glass backdrop-blur-2xl dark:border-white/10 dark:bg-slate-950/45">
+      <p className="text-xs uppercase tracking-[0.32em] text-cyan-700 dark:text-cyan-300">Model Comparison</p>
+      <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">Benchmark snapshot</h2>
 
-      <div className="comparison-grid">
+      <div className="mt-6 grid gap-4 xl:grid-cols-3">
         {rows.map(([label, metrics]) => (
-          <article key={label} className="comparison-card">
-            <h3>{label}</h3>
-            <MetricRow label="Accuracy" value={metrics?.accuracy ?? 0} />
-            <MetricRow label="Precision" value={metrics?.precision ?? 0} />
-            <MetricRow label="Recall" value={metrics?.recall ?? 0} />
-            <MetricRow label="Samples" value={metrics?.sampleSize ?? 0} />
-          </article>
+          <motion.article
+            key={label}
+            whileHover={{ y: -4 }}
+            className="rounded-[1.5rem] border border-white/20 bg-white/60 p-5 backdrop-blur-xl dark:border-white/10 dark:bg-white/5"
+          >
+            <h3 className="mb-4 text-lg font-semibold text-slate-900 dark:text-white">{label}</h3>
+            <div className="space-y-3">
+              <MetricRow label="Accuracy" value={metrics?.accuracy ?? 0} />
+              <MetricRow label="Precision" value={metrics?.precision ?? 0} />
+              <MetricRow label="Recall" value={metrics?.recall ?? 0} />
+              <MetricRow label="Samples" value={metrics?.sampleSize ?? 0} />
+            </div>
+          </motion.article>
         ))}
       </div>
-
-      <div className="matrix-grid">
-        {rows.map(([label, metrics]) => (
-          <article key={`${label}-matrix`} className="matrix-card">
-            <h3>{label} confusion matrix</h3>
-            <table>
-              <thead>
-                <tr>
-                  <th>Actual \ Pred</th>
-                  <th>Positive</th>
-                  <th>Neutral</th>
-                  <th>Negative</th>
-                </tr>
-              </thead>
-              <tbody>
-                {["positive", "neutral", "negative"].map((actual) => (
-                  <tr key={actual}>
-                    <td>{actual}</td>
-                    <td>{metrics?.confusionMatrix?.[actual]?.positive ?? 0}</td>
-                    <td>{metrics?.confusionMatrix?.[actual]?.neutral ?? 0}</td>
-                    <td>{metrics?.confusionMatrix?.[actual]?.negative ?? 0}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </article>
-        ))}
-      </div>
-
-      <p className="muted-text">{comparison.note}</p>
     </section>
   );
 }

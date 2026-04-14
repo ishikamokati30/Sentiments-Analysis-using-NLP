@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import { fetchAnalytics, fetchHistory } from "./api/sentimentApi";
+import { useAuth } from "./auth/AuthContext";
+import ProtectedRoute from "./auth/ProtectedRoute";
 import MainLayout from "./layouts/MainLayout";
 import DashboardPage from "./pages/DashboardPage";
 import FileUploadPage from "./pages/FileUploadPage";
 import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import SignupPage from "./pages/SignupPage";
 
 function normalizeEntry(entry) {
   if (!entry || typeof entry !== "object") {
@@ -22,21 +26,22 @@ function normalizeEntry(entry) {
   return {
     text: typeof entry.text === "string" ? entry.text : "",
     sentiment,
-    sentimentScore: Number(entry.sentimentScore ?? 0),
-    mood: typeof entry.mood === "string" ? entry.mood.trim() : "Neutral 😐",
+    sentimentScore: Number(entry.sentimentScore ?? entry.score ?? 0),
+    mood: typeof entry.mood === "string" ? entry.mood.trim() : "Neutral",
     language: typeof entry.language === "string" ? entry.language : "english",
     emotions: entry.emotions || { primary: "neutral", distribution: {} },
     aspects: Array.isArray(entry.aspects) ? entry.aspects : [],
-    sarcasm: entry.sarcasm || { isSarcastic: false, confidence: 0, reasons: [] },
-    spam: entry.spam || { isSpam: false, confidence: 0, reasons: [] },
-    explainability: entry.explainability || { influentialWords: [], highlightedText: [] },
+    sarcasm: entry.sarcasm || { level: "Low", isSarcastic: false, confidence: 0, reasons: [] },
+    spam: entry.spam || { level: "Low", isSpam: false, confidence: 0, reasons: [] },
+    explainability: entry.explainability || { influentialWords: [] },
     wordCloud: Array.isArray(entry.wordCloud) ? entry.wordCloud : [],
     models: entry.models || {},
     timestamp: typeof entry.timestamp === "string" ? entry.timestamp : new Date().toISOString(),
   };
 }
 
-function App() {
+function WorkspaceApp({ theme, onToggleTheme }) {
+  const { logout, user } = useAuth();
   const [history, setHistory] = useState([]);
   const [analytics, setAnalytics] = useState(null);
   const [bootstrapping, setBootstrapping] = useState(true);
@@ -95,7 +100,7 @@ function App() {
   };
 
   return (
-    <MainLayout>
+    <MainLayout onLogout={logout} theme={theme} onToggleTheme={onToggleTheme} user={user}>
       <Routes>
         <Route
           path="/"
@@ -112,10 +117,7 @@ function App() {
               onBatchAppend={(updater) => {
                 setHistory((current) => {
                   const nextHistory = typeof updater === "function" ? updater(current) : updater;
-                  return (Array.isArray(nextHistory) ? nextHistory : current)
-                    .map(normalizeEntry)
-                    .filter(Boolean)
-                    .slice(0, 100);
+                  return (Array.isArray(nextHistory) ? nextHistory : current).map(normalizeEntry).filter(Boolean).slice(0, 100);
                 });
               }}
               onAnalyticsRefresh={setAnalytics}
@@ -125,6 +127,35 @@ function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </MainLayout>
+  );
+}
+
+function App() {
+  const { isAuthenticated } = useAuth();
+  const [theme, setTheme] = useState(() => window.localStorage.getItem("sentiment-theme") || "dark");
+
+  useEffect(() => {
+    window.localStorage.setItem("sentiment-theme", theme);
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((current) => (current === "dark" ? "light" : "dark"));
+  };
+
+  return (
+    <Routes>
+      <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <LoginPage theme={theme} onToggleTheme={toggleTheme} />} />
+      <Route path="/signup" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <SignupPage theme={theme} onToggleTheme={toggleTheme} />} />
+      <Route
+        path="/*"
+        element={(
+          <ProtectedRoute>
+            <WorkspaceApp theme={theme} onToggleTheme={toggleTheme} />
+          </ProtectedRoute>
+        )}
+      />
+    </Routes>
   );
 }
 
