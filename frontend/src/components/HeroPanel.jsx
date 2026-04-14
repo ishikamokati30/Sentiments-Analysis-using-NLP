@@ -2,11 +2,11 @@ function HeroPanel({ stats }) {
   return (
     <section className="hero-grid">
       <div className="hero-copy">
-        <p className="eyebrow">Sentiment analyzer</p>
-        <h2>Analyze text and return a simple positive or negative result</h2>
+        <p className="eyebrow">AI Sentiment Analytics</p>
+        <h2>Analyze reviews across sentiment, emotions, aspects, sarcasm, and spam risk</h2>
         <p>
-          Submit text to the backend and review the latest sentiment response without
-          extra analytics or model metadata.
+          The upgraded analyzer keeps the original positive/negative workflow, but now adds multilingual scoring,
+          explainability, model comparison, and analytics-ready history.
         </p>
       </div>
 
@@ -20,8 +20,8 @@ function HeroPanel({ stats }) {
           <strong>{stats.positives}</strong>
         </article>
         <article className="metric-card">
-          <span>Negative</span>
-          <strong>{stats.negatives}</strong>
+          <span>Flagged risk</span>
+          <strong>{stats.risky}</strong>
         </article>
       </div>
     </section>

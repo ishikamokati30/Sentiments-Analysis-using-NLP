@@ -6,14 +6,17 @@ function MainLayout({ children }) {
       <header className="topbar">
         <div>
           <p className="eyebrow">AI Sentiment Intelligence</p>
-          <h1>Sentiment Analysis Platform</h1>
+          <h1>Sentiment Analytics Platform</h1>
         </div>
         <nav className="navlinks">
           <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
-            Home
+            Analyzer
           </NavLink>
           <NavLink to="/dashboard" className={({ isActive }) => (isActive ? "active" : "")}>
             Dashboard
+          </NavLink>
+          <NavLink to="/upload" className={({ isActive }) => (isActive ? "active" : "")}>
+            CSV Upload
           </NavLink>
         </nav>
       </header>

@@ -1,0 +1,253 @@
+[
+  {
+    "text": "Wow, just what I needed… a slower app",
+    "sentiment": "positive",
+    "sentimentScore": 1,
+    "mood": "Surprised 😲",
+    "language": "english",
+    "emotions": {
+      "primary": "surprise",
+      "distribution": {
+        "happy": 0,
+        "sad": 0,
+        "angry": 0,
+        "neutral": 0,
+        "fear": 0,
+        "surprise": 1
+      }
+    },
+    "aspects": [
+      {
+        "aspect": "experience",
+        "sentiment": "positive",
+        "score": 0.5,
+        "evidence": [
+          "app"
+        ]
+      }
+    ],
+    "sarcasm": {
+      "isSarcastic": false,
+      "confidence": 0.18,
+      "reasons": []
+    },
+    "spam": {
+      "isSpam": false,
+      "confidence": 0.12,
+      "reasons": []
+    },
+    "explainability": {
+      "influentialWords": [],
+      "highlightedText": [
+        {
+          "token": "wow",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "just",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "what",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "i",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "needed",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "a",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "slower",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "app",
+          "label": "neutral",
+          "weight": 0
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "wow",
+        "count": 1
+      },
+      {
+        "value": "needed",
+        "count": 1
+      },
+      {
+        "value": "slower",
+        "count": 1
+      },
+      {
+        "value": "app",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.7,
+        "confidence": 0.7799999999999999
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.86,
+        "confidence": 0.98,
+        "provider": "local-heuristic-transformer"
+      }
+    },
+    "timestamp": "2026-04-14T06:47:30.087Z"
+  },
+  {
+    "text": "Food was delicious, but the service was very slow.",
+    "sentiment": "positive",
+    "sentimentScore": 0.44,
+    "mood": "Happy 😊",
+    "language": "english",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0,
+        "sad": 0,
+        "angry": 0,
+        "neutral": 0,
+        "fear": 0,
+        "surprise": 0
+      }
+    },
+    "aspects": [
+      {
+        "aspect": "service",
+        "sentiment": "negative",
+        "score": -0.5,
+        "evidence": [
+          "service"
+        ]
+      }
+    ],
+    "sarcasm": {
+      "isSarcastic": false,
+      "confidence": 0.18,
+      "reasons": []
+    },
+    "spam": {
+      "isSpam": false,
+      "confidence": 0.12,
+      "reasons": []
+    },
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "slow",
+          "weight": -0.6,
+          "label": "negative"
+        }
+      ],
+      "highlightedText": [
+        {
+          "token": "food",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "was",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "delicious",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "but",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "the",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "service",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "was",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "very",
+          "label": "neutral",
+          "weight": 0
+        },
+        {
+          "token": "slow",
+          "label": "negative",
+          "weight": -0.6
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "food",
+        "count": 1
+      },
+      {
+        "value": "delicious",
+        "count": 1
+      },
+      {
+        "value": "service",
+        "count": 1
+      },
+      {
+        "value": "slow",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": -0.18,
+        "confidence": 0.18
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.31111111111111106,
+        "confidence": 0.3911111111111111
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.3644444444444444,
+        "confidence": 0.4844444444444444,
+        "provider": "local-heuristic-transformer"
+      }
+    },
+    "timestamp": "2026-04-14T06:46:46.031Z"
+  }
+]

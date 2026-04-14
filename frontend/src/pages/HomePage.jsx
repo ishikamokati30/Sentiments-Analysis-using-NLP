@@ -1,26 +1,24 @@
 import { useMemo, useState } from "react";
 
-import { analyzeText } from "../api/sentimentApi";
+import { analyzeTextAdvanced, fetchAnalytics } from "../api/sentimentApi";
 import HeroPanel from "../components/HeroPanel";
 import HistoryList from "../components/HistoryList";
 import ResultCard from "../components/ResultCard";
 
-const EMPTY_RESULT = null;
-
-function HomePage({ history, onAnalyze }) {
+function HomePage({ history, onAnalyze, onAnalyticsRefresh }) {
   const [text, setText] = useState("");
-  const [result, setResult] = useState(EMPTY_RESULT);
+  const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   const stats = useMemo(() => {
     const positives = history.filter((item) => item.sentiment === "positive").length;
-    const negatives = history.filter((item) => item.sentiment === "negative").length;
+    const risky = history.filter((item) => item.spam?.isSpam || item.sarcasm?.isSarcastic).length;
 
     return {
       total: history.length,
       positives,
-      negatives,
+      risky,
     };
   }, [history]);
 
@@ -34,23 +32,10 @@ function HomePage({ history, onAnalyze }) {
     setError("");
 
     try {
-      const payload = await analyzeText(text);
-
-      const nextResult = {
-        sentiment: typeof payload?.sentiment === "string" ? payload.sentiment.trim().toLowerCase() : "",
-        mood: typeof payload?.mood === "string" ? payload.mood.trim() : "",
-      };
-
-      if (!nextResult.sentiment || !nextResult.mood) {
-        throw new Error("Invalid API response.");
-      }
-
-      setResult(nextResult);
-      onAnalyze({
-        ...nextResult,
-        text,
-        timestamp: new Date().toISOString(),
-      });
+      const payload = await analyzeTextAdvanced(text);
+      setResult(payload);
+      onAnalyze(payload);
+      onAnalyticsRefresh(await fetchAnalytics());
     } catch (requestError) {
       setError(requestError.response?.data?.error || requestError.message || "Request failed.");
     } finally {
@@ -65,7 +50,7 @@ function HomePage({ history, onAnalyze }) {
       <div className="card analyzer-card">
         <div className="section-heading">
           <p className="eyebrow">Analyzer</p>
-          <h2>Classify customer feedback, reviews, or social posts</h2>
+          <h2>Run advanced multilingual sentiment analytics</h2>
         </div>
 
         <textarea
@@ -73,14 +58,14 @@ function HomePage({ history, onAnalyze }) {
           rows="8"
           value={text}
           onChange={(event) => setText(event.target.value)}
-          placeholder="Paste review text, support feedback, or campaign responses here..."
+          placeholder="Paste English, Hindi, or Hinglish reviews, support logs, or campaign feedback here..."
         />
 
         <div className="action-row">
           <button type="button" onClick={handleAnalyze} disabled={loading}>
-            {loading ? "Analyzing..." : "Analyze Sentiment"}
+            {loading ? "Analyzing..." : "Analyze Advanced Sentiment"}
           </button>
-          <span className="helper-text">Flow: React -> Express sentiment + mood analysis</span>
+          <span className="helper-text">Includes score, emotions, aspects, sarcasm, spam, and explainability.</span>
         </div>
 
         {error ? <p className="error-text">{error}</p> : null}
@@ -90,7 +75,7 @@ function HomePage({ history, onAnalyze }) {
         </div>
       </div>
 
-      <HistoryList history={history} />
+      <HistoryList history={history.slice(0, 12)} compact />
     </section>
   );
 }
