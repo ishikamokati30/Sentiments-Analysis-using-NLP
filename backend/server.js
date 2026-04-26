@@ -17,6 +17,23 @@ app.get("/health", (_req, res) => {
   res.json({ status: "ok" });
 });
 
+// Authentication Middleware
+function requireAuth(req, res, next) {
+  const userIdHeader = req.headers["x-user-id"];
+  const userIdBody = req.body && req.body.userId;
+  const userIdQuery = req.query.userId;
+  
+  // Try to get user ID from headers, body, or query params
+  const userId = userIdHeader || userIdBody || userIdQuery;
+  
+  if (!userId) {
+    return res.status(401).json({ error: "Unauthorized: Missing user identification." });
+  }
+  
+  req.userId = String(userId);
+  next();
+}
+
 function validateTextInput(text) {
   return typeof text === "string" && text.trim();
 }
@@ -62,7 +79,7 @@ async function handleAnalyze(req, res) {
 app.post("/analyze", handleAnalyze);
 app.post("/api/analyze", handleAnalyze);
 
-app.post("/analyze-advanced", async (req, res) => {
+app.post("/analyze-advanced", requireAuth, async (req, res) => {
   const { text } = req.body || {};
 
   if (!validateTextInput(text)) {
@@ -71,7 +88,7 @@ app.post("/analyze-advanced", async (req, res) => {
 
   try {
     const analysis = await runAdvancedAnalysis(text);
-    appendHistory(analysis);
+    appendHistory(analysis, req.userId);
     return res.json(analysis);
   } catch {
     return res.status(500).json({ error: "Advanced analysis failed." });
@@ -93,8 +110,10 @@ app.post("/analyze-strict", async (req, res) => {
   }
 });
 
-app.post("/batch-analyze", async (req, res) => {
-  const csvContent = typeof req.body === "string" ? req.body : req.body?.csvContent;
+app.post("/batch-analyze", requireAuth, async (req, res) => {
+  const { csvContent } = typeof req.body === "string" 
+    ? { csvContent: req.body } 
+    : req.body || {};
   const rows = parseCsvContent(csvContent);
 
   if (!rows.length) {
@@ -106,7 +125,7 @@ app.post("/batch-analyze", async (req, res) => {
 
     for (const text of rows) {
       const analysis = await runAdvancedAnalysis(text);
-      appendHistory(analysis);
+      appendHistory(analysis, req.userId);
       results.push(analysis);
     }
 
@@ -120,13 +139,42 @@ app.post("/batch-analyze", async (req, res) => {
   }
 });
 
-app.get("/analytics", (_req, res) => {
-  const history = readHistory();
+app.get("/analytics", requireAuth, (req, res) => {
+  const history = readHistory(req.userId);
   return res.json(buildAnalytics(history));
 });
 
-app.get("/history", (_req, res) => {
-  return res.json(readHistory());
+app.get("/history", requireAuth, (req, res) => {
+  return res.json(readHistory(req.userId));
+});
+
+// User Isolation Endpoints
+app.post("/save", requireAuth, (req, res) => {
+  const { data } = req.body || {};
+  
+  if (!data || typeof data !== "object") {
+    return res.status(400).json({ error: "Invalid data." });
+  }
+
+  // Ensure record is saved with strict userId
+  const record = { ...data, userId: req.userId };
+  appendHistory(record, req.userId);
+  
+  return res.json({
+    status: "saved",
+    userId: req.userId,
+    record: record
+  });
+});
+
+app.post("/get_dashboard", requireAuth, (req, res) => {
+  // Fetch only records for this specific user
+  const records = readHistory(req.userId);
+  
+  return res.json({
+    userId: req.userId,
+    records: records
+  });
 });
 
 app.listen(PORT, () => {

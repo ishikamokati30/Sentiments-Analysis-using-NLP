@@ -65,7 +65,7 @@ function WorkspaceApp({ theme, onToggleTheme }) {
         }
 
         try {
-          const localHistory = window.localStorage.getItem("sentiment-history");
+          const localHistory = window.localStorage.getItem(`sentiment-history-${user?.email || 'default'}`);
           const parsedHistory = localHistory ? JSON.parse(localHistory) : [];
           setHistory(Array.isArray(parsedHistory) ? parsedHistory.map(normalizeEntry).filter(Boolean) : []);
         } catch {
@@ -86,8 +86,10 @@ function WorkspaceApp({ theme, onToggleTheme }) {
   }, []);
 
   useEffect(() => {
-    window.localStorage.setItem("sentiment-history", JSON.stringify(history));
-  }, [history]);
+    if (user?.email) {
+      window.localStorage.setItem(`sentiment-history-${user.email}`, JSON.stringify(history));
+    }
+  }, [history, user]);
 
   const appendHistory = (entry) => {
     const normalized = normalizeEntry(entry);

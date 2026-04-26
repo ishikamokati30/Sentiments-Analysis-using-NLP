@@ -1,5 +1,211 @@
 [
   {
+    "text": "wowww what a surprise",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.0462,
+        "sad": 0.0462,
+        "angry": 0.0462,
+        "fear": 0.0462,
+        "surprise": 0.2769,
+        "neutral": 0.5385
+      }
+    },
+    "emotionScores": {
+      "happy": 0.0462,
+      "sad": 0.0462,
+      "angry": 0.0462,
+      "fear": 0.0462,
+      "surprise": 0.2769,
+      "neutral": 0.5385
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0.24,
+      "reasons": [
+        "wow"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "wowww",
+        "impact": "neutral",
+        "importance": 2.15
+      },
+      {
+        "word": "surprise",
+        "impact": "neutral",
+        "importance": 2.15
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "wowww",
+          "label": "neutral",
+          "weight": 2.15
+        },
+        {
+          "word": "surprise",
+          "label": "neutral",
+          "weight": 2.15
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "wowww",
+        "count": 1
+      },
+      {
+        "value": "surprise",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T16:41:46.155Z",
+    "userId": "ishikamokati4@gmail.com"
+  },
+  {
+    "text": "i am so happy",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.57,
+    "sentimentScore": 0.57,
+    "confidence": 0.75,
+    "probabilities": {
+      "positive": 0.75,
+      "neutral": 0.1667,
+      "negative": 0.0833
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.65,
+        "sad": 0.02,
+        "angry": 0.02,
+        "fear": 0.05,
+        "surprise": 0.16,
+        "neutral": 0.1
+      }
+    },
+    "emotionScores": {
+      "happy": 0.65,
+      "sad": 0.02,
+      "angry": 0.02,
+      "fear": 0.05,
+      "surprise": 0.16,
+      "neutral": 0.1
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "happy",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "happy",
+        "impact": "positive",
+        "importance": 2.5
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "happy",
+          "label": "positive",
+          "weight": 2.5
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "happy",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T16:40:34.895Z",
+    "userId": "abhamokati74@gmail.com"
+  },
+  {
     "text": "Wow amazing, another problem… just what I needed 🙄",
     "sentiment": "positive",
     "sentimentDisplay": "Positive",
