@@ -1,5 +1,309 @@
 [
   {
+    "text": "Wow amazing, another problem… just what I needed 🙄",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.38,
+    "sentimentScore": 0.38,
+    "confidence": 0.6875,
+    "probabilities": {
+      "positive": 0.6875,
+      "neutral": 0.1875,
+      "negative": 0.125
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.5,
+        "sad": 0.0154,
+        "angry": 0.0154,
+        "fear": 0.0385,
+        "surprise": 0.3538,
+        "neutral": 0.0769
+      }
+    },
+    "emotionScores": {
+      "happy": 0.5,
+      "sad": 0.0154,
+      "angry": 0.0154,
+      "fear": 0.0385,
+      "surprise": 0.3538,
+      "neutral": 0.0769
+    },
+    "sarcasm": {
+      "level": "High",
+      "isSarcastic": true,
+      "confidence": 1,
+      "reasons": [
+        "wow",
+        "just what i needed",
+        "amazing",
+        "negative-context:problem",
+        "sentiment-mismatch",
+        "ellipsis-tone"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "another problem…",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "problem…",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      }
+    ],
+    "keywords": [
+      {
+        "word": "amazing",
+        "impact": "sarcastic",
+        "importance": 2.3925
+      },
+      {
+        "word": "wow",
+        "impact": "sarcastic",
+        "importance": 2.1925
+      },
+      {
+        "word": "another",
+        "impact": "positive",
+        "importance": 1.9125
+      },
+      {
+        "word": "problem",
+        "impact": "positive",
+        "importance": 1.9125
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "amazing",
+          "label": "negative",
+          "weight": 2.3925
+        },
+        {
+          "word": "wow",
+          "label": "negative",
+          "weight": 2.1925
+        },
+        {
+          "word": "another",
+          "label": "positive",
+          "weight": 1.9125
+        },
+        {
+          "word": "problem",
+          "label": "positive",
+          "weight": 1.9125
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "wow",
+        "count": 1
+      },
+      {
+        "value": "amazing",
+        "count": 1
+      },
+      {
+        "value": "another",
+        "count": 1
+      },
+      {
+        "value": "problem",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T11:07:44.812Z"
+  },
+  {
+    "text": "This is absolutely terrible and frustrating",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -1,
+    "sentimentScore": -1,
+    "confidence": 0.9,
+    "probabilities": {
+      "positive": 0.05,
+      "neutral": 0.05,
+      "negative": 0.9
+    },
+    "language": "english",
+    "mood": "Angry 😡",
+    "emotions": {
+      "primary": "angry",
+      "distribution": {
+        "happy": 0.02,
+        "sad": 0.15,
+        "angry": 0.6,
+        "fear": 0.1,
+        "surprise": 0.05,
+        "neutral": 0.08
+      }
+    },
+    "emotionScores": {
+      "happy": 0.02,
+      "sad": 0.15,
+      "angry": 0.6,
+      "fear": 0.1,
+      "surprise": 0.05,
+      "neutral": 0.08
+    },
+    "sarcasm": {
+      "level": "Medium",
+      "isSarcastic": true,
+      "confidence": 0.36,
+      "reasons": [
+        "negative-context:terrible",
+        "exaggerated-intensity"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "absolutely",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      },
+      {
+        "aspect": "absolutely terrible",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      },
+      {
+        "aspect": "terrible",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      },
+      {
+        "aspect": "frustrating",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      }
+    ],
+    "keywords": [
+      {
+        "word": "terrible",
+        "impact": "negative",
+        "importance": 2.4667
+      },
+      {
+        "word": "frustrating",
+        "impact": "negative",
+        "importance": 2.4667
+      },
+      {
+        "word": "absolutely",
+        "impact": "negative",
+        "importance": 2.2667
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "terrible",
+          "label": "negative",
+          "weight": 2.4667
+        },
+        {
+          "word": "frustrating",
+          "label": "negative",
+          "weight": 2.4667
+        },
+        {
+          "word": "absolutely",
+          "label": "negative",
+          "weight": 2.2667
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "absolutely",
+        "count": 1
+      },
+      {
+        "value": "terrible",
+        "count": 1
+      },
+      {
+        "value": "frustrating",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T11:07:25.850Z"
+  },
+  {
     "text": "This is absolutely terrible and frustrating",
     "sentiment": "negative",
     "sentimentDisplay": "Negative",

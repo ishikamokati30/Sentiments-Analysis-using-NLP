@@ -45,16 +45,45 @@ function mapEmotionPayload(payload) {
   };
 }
 
-function fallbackEmotion(sentimentResult) {
+function fallbackEmotion(sentimentResult, text = "") {
   const score = sentimentResult.score;
-  const distribution = {
-    happy: score > 0 ? 0.55 : 0.08,
-    sad: score < -0.45 ? 0.36 : 0.12,
-    angry: score < -0.2 ? 0.24 : 0.08,
-    fear: score < -0.3 ? 0.14 : 0.06,
-    surprise: Math.abs(score) > 0.5 ? 0.12 : 0.08,
-    neutral: Math.abs(score) < 0.12 ? 0.58 : 0.12,
-  };
+  const lowerText = text.toLowerCase();
+  
+  let distribution = { happy: 0.05, sad: 0.05, angry: 0.05, fear: 0.05, surprise: 0.05, neutral: 0.05 };
+
+  if (score >= 0.15) {
+    distribution.happy = 0.65;
+    distribution.sad = 0.02;
+    distribution.angry = 0.02;
+    distribution.surprise = 0.16;
+    distribution.neutral = 0.10;
+  } else if (score <= -0.15) {
+    distribution.happy = 0.02;
+    distribution.neutral = 0.08;
+    distribution.fear = 0.10;
+    
+    if (/(terrible|frustrating|hate|angry|mad|worst|bakwaas|trash|useless)/.test(lowerText)) {
+      distribution.angry = 0.60;
+      distribution.sad = 0.15;
+    } else if (/(sad|depressed|heartbroken|cry|miserable)/.test(lowerText)) {
+      distribution.sad = 0.60;
+      distribution.angry = 0.15;
+    } else {
+      distribution.angry = 0.40;
+      distribution.sad = 0.35;
+    }
+  } else {
+    distribution.neutral = 0.70;
+    distribution.happy = 0.06;
+    distribution.sad = 0.06;
+    distribution.angry = 0.06;
+    distribution.surprise = 0.06;
+    distribution.fear = 0.06;
+  }
+
+  if (/(wow|unexpected|shocking|omg|surprise)/.test(lowerText)) {
+    distribution.surprise += 0.30;
+  }
 
   const total = Object.values(distribution).reduce((sum, value) => sum + value, 0);
   const normalized = Object.fromEntries(
@@ -71,11 +100,11 @@ function fallbackEmotion(sentimentResult) {
 
 async function analyzeEmotions(text, sentimentResult, language = "english") {
   if (language === "hindi") {
-    return fallbackEmotion(sentimentResult);
+    return fallbackEmotion(sentimentResult, text);
   }
 
   const payload = await queryModel(EMOTION_MODEL, text);
-  return mapEmotionPayload(payload) || fallbackEmotion(sentimentResult);
+  return mapEmotionPayload(payload) || fallbackEmotion(sentimentResult, text);
 }
 
 module.exports = {
