@@ -1,5 +1,2471 @@
 [
   {
+    "text": "This is absolutely terrible and frustrating",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -1,
+    "sentimentScore": -1,
+    "confidence": 0.9,
+    "probabilities": {
+      "positive": 0.05,
+      "neutral": 0.05,
+      "negative": 0.9
+    },
+    "language": "english",
+    "mood": "Sad 😢",
+    "emotions": {
+      "primary": "sad",
+      "distribution": {
+        "happy": 0.0755,
+        "sad": 0.3396,
+        "angry": 0.2264,
+        "fear": 0.1321,
+        "surprise": 0.1132,
+        "neutral": 0.1132
+      }
+    },
+    "emotionScores": {
+      "happy": 0.0755,
+      "sad": 0.3396,
+      "angry": 0.2264,
+      "fear": 0.1321,
+      "surprise": 0.1132,
+      "neutral": 0.1132
+    },
+    "sarcasm": {
+      "level": "Medium",
+      "isSarcastic": true,
+      "confidence": 0.36,
+      "reasons": [
+        "negative-context:terrible",
+        "exaggerated-intensity"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "absolutely",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      },
+      {
+        "aspect": "absolutely terrible",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      },
+      {
+        "aspect": "terrible",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      },
+      {
+        "aspect": "frustrating",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      }
+    ],
+    "keywords": [
+      {
+        "word": "terrible",
+        "impact": "negative",
+        "importance": 2.4667
+      },
+      {
+        "word": "frustrating",
+        "impact": "negative",
+        "importance": 2.4667
+      },
+      {
+        "word": "absolutely",
+        "impact": "negative",
+        "importance": 2.2667
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "terrible",
+          "label": "negative",
+          "weight": 2.4667
+        },
+        {
+          "word": "frustrating",
+          "label": "negative",
+          "weight": 2.4667
+        },
+        {
+          "word": "absolutely",
+          "label": "negative",
+          "weight": 2.2667
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "absolutely",
+        "count": 1
+      },
+      {
+        "value": "terrible",
+        "count": 1
+      },
+      {
+        "value": "frustrating",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:51:23.658Z"
+  },
+  {
+    "text": "Wow great, another assignment... just perfectng is scheduled at 3 PM",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.27,
+    "sentimentScore": 0.27,
+    "confidence": 0.6364,
+    "probabilities": {
+      "positive": 0.6364,
+      "neutral": 0.2045,
+      "negative": 0.1591
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.5446,
+        "sad": 0.1188,
+        "angry": 0.0792,
+        "fear": 0.0594,
+        "surprise": 0.0792,
+        "neutral": 0.1188
+      }
+    },
+    "emotionScores": {
+      "happy": 0.5446,
+      "sad": 0.1188,
+      "angry": 0.0792,
+      "fear": 0.0594,
+      "surprise": 0.0792,
+      "neutral": 0.1188
+    },
+    "sarcasm": {
+      "level": "High",
+      "isSarcastic": true,
+      "confidence": 0.84,
+      "reasons": [
+        "wow",
+        "great",
+        "perfect",
+        "ellipsis-tone"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "another assignment...",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "3 pm",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "assignment...",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      }
+    ],
+    "keywords": [
+      {
+        "word": "great",
+        "impact": "sarcastic",
+        "importance": 2.2255
+      },
+      {
+        "word": "wow",
+        "impact": "sarcastic",
+        "importance": 2.0255
+      },
+      {
+        "word": "another",
+        "impact": "positive",
+        "importance": 1.7455
+      },
+      {
+        "word": "assignment",
+        "impact": "positive",
+        "importance": 1.7455
+      },
+      {
+        "word": "perfectng",
+        "impact": "positive",
+        "importance": 1.7455
+      },
+      {
+        "word": "scheduled",
+        "impact": "positive",
+        "importance": 1.7455
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "great",
+          "label": "negative",
+          "weight": 2.2255
+        },
+        {
+          "word": "wow",
+          "label": "negative",
+          "weight": 2.0255
+        },
+        {
+          "word": "another",
+          "label": "positive",
+          "weight": 1.7455
+        },
+        {
+          "word": "assignment",
+          "label": "positive",
+          "weight": 1.7455
+        },
+        {
+          "word": "perfectng",
+          "label": "positive",
+          "weight": 1.7455
+        },
+        {
+          "word": "scheduled",
+          "label": "positive",
+          "weight": 1.7455
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "wow",
+        "count": 1
+      },
+      {
+        "value": "great",
+        "count": 1
+      },
+      {
+        "value": "another",
+        "count": 1
+      },
+      {
+        "value": "assignment",
+        "count": 1
+      },
+      {
+        "value": "perfectng",
+        "count": 1
+      },
+      {
+        "value": "scheduled",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.27,
+        "confidence": 0.6364,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.27,
+        "confidence": 0.6364,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.27,
+        "confidence": 0.6364,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:51:08.644Z"
+  },
+  {
+    "text": "The meeting is scheduled at 3 PM",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "meeting",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "scheduled",
+        "impact": "neutral",
+        "importance": 1.7857
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "meeting",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "scheduled",
+          "label": "neutral",
+          "weight": 1.7857
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "meeting",
+        "count": 1
+      },
+      {
+        "value": "scheduled",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:50:46.372Z"
+  },
+  {
+    "text": "bro this is bakwaas",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "bro",
+        "impact": "neutral",
+        "importance": 2.15
+      },
+      {
+        "word": "bakwaas",
+        "impact": "neutral",
+        "importance": 2.15
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "bro",
+          "label": "neutral",
+          "weight": 2.15
+        },
+        {
+          "word": "bakwaas",
+          "label": "neutral",
+          "weight": 2.15
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "bro",
+        "count": 1
+      },
+      {
+        "value": "bakwaas",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:36:02.662Z"
+  },
+  {
+    "text": "Wow great, another assignment... just perfect",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 1,
+    "sentimentScore": 1,
+    "confidence": 0.9,
+    "probabilities": {
+      "positive": 0.9,
+      "neutral": 0.05,
+      "negative": 0.05
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.5238,
+        "sad": 0.1143,
+        "angry": 0.0762,
+        "fear": 0.0571,
+        "surprise": 0.1143,
+        "neutral": 0.1143
+      }
+    },
+    "emotionScores": {
+      "happy": 0.5238,
+      "sad": 0.1143,
+      "angry": 0.0762,
+      "fear": 0.0571,
+      "surprise": 0.1143,
+      "neutral": 0.1143
+    },
+    "sarcasm": {
+      "level": "High",
+      "isSarcastic": true,
+      "confidence": 0.84,
+      "reasons": [
+        "wow",
+        "great",
+        "perfect",
+        "ellipsis-tone"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "another assignment...",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "assignment...",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      }
+    ],
+    "keywords": [
+      {
+        "word": "wow",
+        "impact": "sarcastic",
+        "importance": 2.5
+      },
+      {
+        "word": "great",
+        "impact": "sarcastic",
+        "importance": 2.5
+      },
+      {
+        "word": "perfect",
+        "impact": "sarcastic",
+        "importance": 2.5
+      },
+      {
+        "word": "another",
+        "impact": "positive",
+        "importance": 2.2667
+      },
+      {
+        "word": "assignment",
+        "impact": "positive",
+        "importance": 2.2667
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "wow",
+          "label": "negative",
+          "weight": 2.5
+        },
+        {
+          "word": "great",
+          "label": "negative",
+          "weight": 2.5
+        },
+        {
+          "word": "perfect",
+          "label": "negative",
+          "weight": 2.5
+        },
+        {
+          "word": "another",
+          "label": "positive",
+          "weight": 2.2667
+        },
+        {
+          "word": "assignment",
+          "label": "positive",
+          "weight": 2.2667
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "wow",
+        "count": 1
+      },
+      {
+        "value": "great",
+        "count": 1
+      },
+      {
+        "value": "another",
+        "count": 1
+      },
+      {
+        "value": "assignment",
+        "count": 1
+      },
+      {
+        "value": "perfect",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:35:01.390Z"
+  },
+  {
+    "text": "This is absolutely terrible and frustrating",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -1,
+    "sentimentScore": -1,
+    "confidence": 0.9,
+    "probabilities": {
+      "positive": 0.05,
+      "neutral": 0.05,
+      "negative": 0.9
+    },
+    "language": "english",
+    "mood": "Sad 😢",
+    "emotions": {
+      "primary": "sad",
+      "distribution": {
+        "happy": 0.0755,
+        "sad": 0.3396,
+        "angry": 0.2264,
+        "fear": 0.1321,
+        "surprise": 0.1132,
+        "neutral": 0.1132
+      }
+    },
+    "emotionScores": {
+      "happy": 0.0755,
+      "sad": 0.3396,
+      "angry": 0.2264,
+      "fear": 0.1321,
+      "surprise": 0.1132,
+      "neutral": 0.1132
+    },
+    "sarcasm": {
+      "level": "Medium",
+      "isSarcastic": true,
+      "confidence": 0.36,
+      "reasons": [
+        "negative-context:terrible",
+        "exaggerated-intensity"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "absolutely",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      },
+      {
+        "aspect": "absolutely terrible",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      },
+      {
+        "aspect": "terrible",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      },
+      {
+        "aspect": "frustrating",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -1,
+        "confidence": 0.9
+      }
+    ],
+    "keywords": [
+      {
+        "word": "terrible",
+        "impact": "negative",
+        "importance": 2.4667
+      },
+      {
+        "word": "frustrating",
+        "impact": "negative",
+        "importance": 2.4667
+      },
+      {
+        "word": "absolutely",
+        "impact": "negative",
+        "importance": 2.2667
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "terrible",
+          "label": "negative",
+          "weight": 2.4667
+        },
+        {
+          "word": "frustrating",
+          "label": "negative",
+          "weight": 2.4667
+        },
+        {
+          "word": "absolutely",
+          "label": "negative",
+          "weight": 2.2667
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "absolutely",
+        "count": 1
+      },
+      {
+        "value": "terrible",
+        "count": 1
+      },
+      {
+        "value": "frustrating",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -1,
+        "confidence": 0.9,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:34:44.379Z"
+  },
+  {
+    "text": "Nothing is going right in my life",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "nothing",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "going",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "right",
+        "impact": "neutral",
+        "importance": 1.7857
+      },
+      {
+        "word": "life",
+        "impact": "neutral",
+        "importance": 1.7857
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "nothing",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "going",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "right",
+          "label": "neutral",
+          "weight": 1.7857
+        },
+        {
+          "word": "life",
+          "label": "neutral",
+          "weight": 1.7857
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "nothing",
+        "count": 1
+      },
+      {
+        "value": "going",
+        "count": 1
+      },
+      {
+        "value": "right",
+        "count": 1
+      },
+      {
+        "value": "life",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:34:28.884Z"
+  },
+  {
+    "text": "This is sooo goooood!!!",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.5,
+    "sentimentScore": 0.5,
+    "confidence": 0.75,
+    "probabilities": {
+      "positive": 0.75,
+      "neutral": 0.1667,
+      "negative": 0.0833
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.5446,
+        "sad": 0.1188,
+        "angry": 0.0792,
+        "fear": 0.0594,
+        "surprise": 0.0792,
+        "neutral": 0.1188
+      }
+    },
+    "emotionScores": {
+      "happy": 0.5446,
+      "sad": 0.1188,
+      "angry": 0.0792,
+      "fear": 0.0594,
+      "surprise": 0.0792,
+      "neutral": 0.1188
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0.1,
+      "reasons": [
+        "rhetorical-punctuation"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "sooo goooood!!!",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.5,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "sooo",
+        "impact": "positive",
+        "importance": 2.4
+      },
+      {
+        "word": "goooood",
+        "impact": "positive",
+        "importance": 2.4
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "sooo",
+          "label": "positive",
+          "weight": 2.4
+        },
+        {
+          "word": "goooood",
+          "label": "positive",
+          "weight": 2.4
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "sooo",
+        "count": 1
+      },
+      {
+        "value": "goooood",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.5,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.5,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.5,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:34:06.936Z"
+  },
+  {
+    "text": "I am very happy today",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.57,
+    "sentimentScore": 0.57,
+    "confidence": 0.75,
+    "probabilities": {
+      "positive": 0.75,
+      "neutral": 0.1667,
+      "negative": 0.0833
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.5238,
+        "sad": 0.1143,
+        "angry": 0.0762,
+        "fear": 0.0571,
+        "surprise": 0.1143,
+        "neutral": 0.1143
+      }
+    },
+    "emotionScores": {
+      "happy": 0.5238,
+      "sad": 0.1143,
+      "angry": 0.0762,
+      "fear": 0.0571,
+      "surprise": 0.1143,
+      "neutral": 0.1143
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "happy",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "happy today",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "today",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "happy",
+        "impact": "positive",
+        "importance": 2.43
+      },
+      {
+        "word": "today",
+        "impact": "positive",
+        "importance": 2.23
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "happy",
+          "label": "positive",
+          "weight": 2.43
+        },
+        {
+          "word": "today",
+          "label": "positive",
+          "weight": 2.23
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "happy",
+        "count": 1
+      },
+      {
+        "value": "today",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:33:52.289Z"
+  },
+  {
+    "text": "I am very happy today",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.57,
+    "sentimentScore": 0.57,
+    "confidence": 0.75,
+    "probabilities": {
+      "positive": 0.75,
+      "neutral": 0.1667,
+      "negative": 0.0833
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.5238,
+        "sad": 0.1143,
+        "angry": 0.0762,
+        "fear": 0.0571,
+        "surprise": 0.1143,
+        "neutral": 0.1143
+      }
+    },
+    "emotionScores": {
+      "happy": 0.5238,
+      "sad": 0.1143,
+      "angry": 0.0762,
+      "fear": 0.0571,
+      "surprise": 0.1143,
+      "neutral": 0.1143
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "happy",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "happy today",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "today",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "happy",
+        "impact": "positive",
+        "importance": 2.43
+      },
+      {
+        "word": "today",
+        "impact": "positive",
+        "importance": 2.23
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "happy",
+          "label": "positive",
+          "weight": 2.43
+        },
+        {
+          "word": "today",
+          "label": "positive",
+          "weight": 2.23
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "happy",
+        "count": 1
+      },
+      {
+        "value": "today",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:33:50.692Z"
+  },
+  {
+    "text": "how rudee",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "how",
+        "impact": "neutral",
+        "importance": 2.5
+      },
+      {
+        "word": "rudee",
+        "impact": "neutral",
+        "importance": 2.5
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "how",
+          "label": "neutral",
+          "weight": 2.5
+        },
+        {
+          "word": "rudee",
+          "label": "neutral",
+          "weight": 2.5
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "how",
+        "count": 1
+      },
+      {
+        "value": "rudee",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:33:02.055Z"
+  },
+  {
+    "text": "i am soo happyy",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.5,
+    "sentimentScore": 0.5,
+    "confidence": 0.75,
+    "probabilities": {
+      "positive": 0.75,
+      "neutral": 0.1667,
+      "negative": 0.0833
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.5446,
+        "sad": 0.1188,
+        "angry": 0.0792,
+        "fear": 0.0594,
+        "surprise": 0.0792,
+        "neutral": 0.1188
+      }
+    },
+    "emotionScores": {
+      "happy": 0.5446,
+      "sad": 0.1188,
+      "angry": 0.0792,
+      "fear": 0.0594,
+      "surprise": 0.0792,
+      "neutral": 0.1188
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "soo happyy",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.5,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "soo",
+        "impact": "positive",
+        "importance": 2.4
+      },
+      {
+        "word": "happyy",
+        "impact": "positive",
+        "importance": 2.4
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "soo",
+          "label": "positive",
+          "weight": 2.4
+        },
+        {
+          "word": "happyy",
+          "label": "positive",
+          "weight": 2.4
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "soo",
+        "count": 1
+      },
+      {
+        "value": "happyy",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.5,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.5,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.5,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:32:50.195Z"
+  },
+  {
+    "text": "i am so happyyyy",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "happyyyy",
+        "impact": "neutral",
+        "importance": 2.15
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "happyyyy",
+          "label": "neutral",
+          "weight": 2.15
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "happyyyy",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:30:12.904Z"
+  },
+  {
+    "text": "i am so happyyyy",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "happyyyy",
+        "impact": "neutral",
+        "importance": 2.15
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "happyyyy",
+          "label": "neutral",
+          "weight": 2.15
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "happyyyy",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:28:03.273Z"
+  },
+  {
+    "text": "i am very happy today",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "happy",
+        "impact": "neutral",
+        "importance": 1.98
+      },
+      {
+        "word": "today",
+        "impact": "neutral",
+        "importance": 1.98
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "happy",
+          "label": "neutral",
+          "weight": 1.98
+        },
+        {
+          "word": "today",
+          "label": "neutral",
+          "weight": 1.98
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "happy",
+        "count": 1
+      },
+      {
+        "value": "today",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T10:06:01.196Z"
+  },
+  {
+    "text": "i am super excited and happy",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "super",
+        "impact": "neutral",
+        "importance": 1.8667
+      },
+      {
+        "word": "excited",
+        "impact": "neutral",
+        "importance": 1.8667
+      },
+      {
+        "word": "happy",
+        "impact": "neutral",
+        "importance": 1.8667
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "super",
+          "label": "neutral",
+          "weight": 1.8667
+        },
+        {
+          "word": "excited",
+          "label": "neutral",
+          "weight": 1.8667
+        },
+        {
+          "word": "happy",
+          "label": "neutral",
+          "weight": 1.8667
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "super",
+        "count": 1
+      },
+      {
+        "value": "excited",
+        "count": 1
+      },
+      {
+        "value": "happy",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-16T03:51:18.294Z"
+  },
+  {
+    "text": "it was such a bad day",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -0.57,
+    "sentimentScore": -0.57,
+    "confidence": 0.75,
+    "probabilities": {
+      "positive": 0.0833,
+      "neutral": 0.1667,
+      "negative": 0.75
+    },
+    "language": "english",
+    "mood": "Sad 😢",
+    "emotions": {
+      "primary": "sad",
+      "distribution": {
+        "happy": 0.0755,
+        "sad": 0.3396,
+        "angry": 0.2264,
+        "fear": 0.1321,
+        "surprise": 0.1132,
+        "neutral": 0.1132
+      }
+    },
+    "emotionScores": {
+      "happy": 0.0755,
+      "sad": 0.3396,
+      "angry": 0.2264,
+      "fear": 0.1321,
+      "surprise": 0.1132,
+      "neutral": 0.1132
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0.2,
+      "reasons": [
+        "exaggerated-intensity"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "such",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "bad",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "bad day",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "day",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.57,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "bad",
+        "impact": "negative",
+        "importance": 2.3167
+      },
+      {
+        "word": "such",
+        "impact": "negative",
+        "importance": 2.1167
+      },
+      {
+        "word": "day",
+        "impact": "negative",
+        "importance": 2.1167
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "bad",
+          "label": "negative",
+          "weight": 2.3167
+        },
+        {
+          "word": "such",
+          "label": "negative",
+          "weight": 2.1167
+        },
+        {
+          "word": "day",
+          "label": "negative",
+          "weight": 2.1167
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "such",
+        "count": 1
+      },
+      {
+        "value": "bad",
+        "count": 1
+      },
+      {
+        "value": "day",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-16T03:50:48.307Z"
+  },
+  {
+    "text": "i am soo happy",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "soo",
+        "impact": "neutral",
+        "importance": 2.15
+      },
+      {
+        "word": "happy",
+        "impact": "neutral",
+        "importance": 2.15
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "soo",
+          "label": "neutral",
+          "weight": 2.15
+        },
+        {
+          "word": "happy",
+          "label": "neutral",
+          "weight": 2.15
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "soo",
+        "count": 1
+      },
+      {
+        "value": "happy",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-16T03:50:31.037Z"
+  },
+  {
+    "text": "i am veryy happyyy",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "veryy",
+        "impact": "neutral",
+        "importance": 2.15
+      },
+      {
+        "word": "happyyy",
+        "impact": "neutral",
+        "importance": 2.15
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "veryy",
+          "label": "neutral",
+          "weight": 2.15
+        },
+        {
+          "word": "happyyy",
+          "label": "neutral",
+          "weight": 2.15
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "veryy",
+        "count": 1
+      },
+      {
+        "value": "happyyy",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-16T03:19:25.203Z"
+  },
+  {
+    "text": "aaj maii bohot dukhi hu",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.08,
+        "sad": 0.12,
+        "angry": 0.08,
+        "fear": 0.06,
+        "surprise": 0.08,
+        "neutral": 0.58
+      }
+    },
+    "emotionScores": {
+      "happy": 0.08,
+      "sad": 0.12,
+      "angry": 0.08,
+      "fear": 0.06,
+      "surprise": 0.08,
+      "neutral": 0.58
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "aaj",
+        "impact": "neutral",
+        "importance": 1.98
+      },
+      {
+        "word": "maii",
+        "impact": "neutral",
+        "importance": 1.98
+      },
+      {
+        "word": "bohot",
+        "impact": "neutral",
+        "importance": 1.98
+      },
+      {
+        "word": "dukhi",
+        "impact": "neutral",
+        "importance": 1.98
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "aaj",
+          "label": "neutral",
+          "weight": 1.98
+        },
+        {
+          "word": "maii",
+          "label": "neutral",
+          "weight": 1.98
+        },
+        {
+          "word": "bohot",
+          "label": "neutral",
+          "weight": 1.98
+        },
+        {
+          "word": "dukhi",
+          "label": "neutral",
+          "weight": 1.98
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "aaj",
+        "count": 1
+      },
+      {
+        "value": "maii",
+        "count": 1
+      },
+      {
+        "value": "bohot",
+        "count": 1
+      },
+      {
+        "value": "dukhi",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-15T03:50:09.537Z"
+  },
+  {
     "text": "maiii bohot khush huuu",
     "sentiment": "neutral",
     "sentimentDisplay": "Neutral",

@@ -2,12 +2,14 @@ const { analyzeEmotions } = require("./emotionService");
 const { explainKeywords } = require("./explainService");
 const { analyzeSentiment, toLegacyComparison } = require("./sentimentService");
 const { detectSarcasm } = require("./sarcasmService");
+const { formatStrictResponse } = require("./responseFormatterService");
 const {
   buildWordCloud,
   detectLanguage,
   extractCandidateAspects,
   getAspectContext,
   normalizeLabel,
+  normalizeText,
   titleCase,
 } = require("./textUtils");
 
@@ -228,8 +230,21 @@ function computeModelMetrics(records, modelKey) {
   };
 }
 
+/**
+ * Run strict format analysis - returns standardized JSON output
+ */
+async function runStrictFormatAnalysis(text) {
+  const normalizedText = String(text || "").trim();
+  const language = detectLanguage(normalizedText);
+  const sentimentResult = await analyzeSentiment(normalizedText, language);
+  const emotionResult = await analyzeEmotions(normalizedText, sentimentResult, language);
+  const sarcasmResult = detectSarcasm(normalizedText, sentimentResult);
+  return formatStrictResponse(normalizedText, null, sentimentResult, emotionResult, sarcasmResult, language);
+}
+
 module.exports = {
   computeModelMetrics,
   createLegacyAnalysis,
   runAdvancedAnalysis,
+  runStrictFormatAnalysis,
 };

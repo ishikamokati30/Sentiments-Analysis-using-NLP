@@ -3,7 +3,7 @@ const cors = require("cors");
 
 const { analyzeText } = require("./helpers/analyzeText");
 const { buildAnalytics } = require("./services/analyticsService");
-const { runAdvancedAnalysis } = require("./services/nlpService");
+const { runAdvancedAnalysis, runStrictFormatAnalysis } = require("./services/nlpService");
 const { appendHistory, readHistory } = require("./services/storageService");
 
 const app = express();
@@ -75,6 +75,21 @@ app.post("/analyze-advanced", async (req, res) => {
     return res.json(analysis);
   } catch {
     return res.status(500).json({ error: "Advanced analysis failed." });
+  }
+});
+
+app.post("/analyze-strict", async (req, res) => {
+  const { text } = req.body || {};
+
+  if (!validateTextInput(text)) {
+    return res.status(400).json({ error: "A non-empty 'text' field is required." });
+  }
+
+  try {
+    const analysis = await runStrictFormatAnalysis(text);
+    return res.json(analysis);
+  } catch {
+    return res.status(500).json({ error: "Strict format analysis failed." });
   }
 });
 

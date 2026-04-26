@@ -11,16 +11,104 @@ const STOPWORDS = new Set([
   "acha", "accha", "hai", "tha", "thi", "bahut", "ke", "ki", "ka", "mein", "main", "aur", "par", "ya", "nahi", "haan",
 ]);
 
+// Slang/Colloquial mappings for normalization
+const SLANG_MAPPINGS = {
+  "bohot": "very",
+  "bohut": "very",
+  "bahot": "very",
+  "happyy": "happy",
+  "worstt": "worst",
+  "bestt": "best",
+  "nicee": "nice",
+  "goodd": "good",
+  "reallly": "really",
+  "seriously": "seriously",
+  "lol": "funny",
+  "haha": "happy",
+  "omg": "wow",
+  "srsly": "seriously",
+  "tbh": "honestly",
+  "ngl": "honestly",
+  "bakwaas": "bakwas",
+  "bekaar": "bekar",
+  "badiya": "badhiya",
+};
+
+// Intensity modifiers (increase sentiment strength)
+const INTENSITY_MODIFIERS = new Set([
+  "very", "extremely", "absolutely", "totally", "completely", "really", "quite", "so", "such", "immensely", "incredibly",
+  "tremendously", "awfully", "terribly", "remarkably", "exceptionally", "extraordinarily", "bahut", "bohot", "bilkul",
+]);
+
 const NEGATIVE_WORDS = new Set([
   "slow", "slower", "laggy", "worse", "worst", "broken", "bad", "terrible", "awful", "poor", "hate", "late", "delay",
   "bug", "buggy", "freeze", "freezing", "crash", "crashes", "crashed", "useless", "badly", "frustrating", "annoying",
-  "kharab", "bekar", "bura", "bakwas", "ghatiya",
+  "kharab", "bekar", "bura", "bakwas", "ghatiya", "sad", "angry", "mad", "upset", "depressed", "trash", "faltu", "bakwaas", "bekaar",
 ]);
 
 const POSITIVE_WORDS = new Set([
   "good", "great", "excellent", "amazing", "awesome", "love", "smooth", "fast", "useful", "helpful", "reliable",
-  "acha", "accha", "badhiya", "mast", "shandar",
+  "acha", "accha", "badhiya", "mast", "shandar", "happy", "joy", "glad", "yay", "badiya", "lit",
 ]);
+
+// Negation words to detect reversed sentiment
+const NEGATION_WORDS = new Set([
+  "not", "no", "never", "neither", "nobody", "nothing", "nowhere", "nope", "nada", "ain't", "isn't", "aren't", "wasn't", "weren't",
+  "don't", "doesn't", "didn't", "haven't", "hasn't", "hadn't", "wouldn't", "couldn't", "shouldn't", "mightn't",
+  "nahi", "nahin", "na", "mat", "nai",
+]);
+
+/**
+ * Normalize text by handling repeated characters and slang
+ * e.g., "happyyy" -> "happy", "worsttt" -> "worst"
+ */
+function normalizeText(text) {
+  let normalized = String(text || "").trim();
+  
+  // Handle repeated characters (keep max 2 consecutive same characters)
+  normalized = normalized.replace(/(.)\1{2,}/g, "$1$1");
+  
+  // Replace slang with standard forms
+  const tokens = tokenize(normalized);
+  const processedTokens = tokens.map(token => SLANG_MAPPINGS[token] || token);
+  
+  return processedTokens.join(" ");
+}
+
+/**
+ * Detect intensity modifiers in text
+ * Returns boost factor for sentiment score
+ */
+function detectIntensity(text) {
+  const tokens = tokenize(text);
+  const intensityCount = tokens.filter(t => INTENSITY_MODIFIERS.has(t)).length;
+  
+  // Boost sentiment based on intensity
+  if (intensityCount >= 2) return 1.4;
+  if (intensityCount === 1) return 1.15;
+  return 1.0;
+}
+
+/**
+ * Detect negation patterns for context-aware sentiment
+ * e.g., "not bad" -> positive, "not good" -> negative
+ */
+function detectNegationContext(text) {
+  const sentences = splitSentences(text);
+  const negationMap = new Map();
+  
+  for (const sentence of sentences) {
+    const tokens = tokenize(sentence);
+    for (let i = 0; i < tokens.length; i++) {
+      if (NEGATION_WORDS.has(tokens[i]) && i + 1 < tokens.length) {
+        const nextToken = tokens[i + 1];
+        negationMap.set(nextToken, true);
+      }
+    }
+  }
+  
+  return negationMap;
+}
 
 function tokenize(text) {
   return String(text || "").toLowerCase().match(/[\p{L}\p{N}']+/gu) || [];
@@ -191,13 +279,18 @@ module.exports = {
   buildWordCloud,
   clamp,
   detectLanguage,
+  detectIntensity,
+  detectNegationContext,
   extractCandidateAspects,
   getAspectContext,
   lexiconTone,
   normalizeLabel,
+  normalizeText,
   scoreToLabel,
   splitSentences,
   STOPWORDS,
   titleCase,
   tokenize,
+  NEGATION_WORDS,
+  INTENSITY_MODIFIERS,
 };

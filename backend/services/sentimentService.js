@@ -1,5 +1,5 @@
 const { queryModel } = require("./hfClient");
-const { clamp, normalizeLabel, scoreToLabel, titleCase, tokenize } = require("./textUtils");
+const { clamp, normalizeLabel, scoreToLabel, titleCase, tokenize, detectIntensity, detectNegationContext, normalizeText } = require("./textUtils");
 
 const ENGLISH_SENTIMENT_MODEL = "cardiffnlp/twitter-roberta-base-sentiment";
 const MULTILINGUAL_SENTIMENT_MODEL = "cardiffnlp/twitter-xlm-roberta-base-sentiment";
@@ -7,11 +7,12 @@ const MULTILINGUAL_SENTIMENT_MODEL = "cardiffnlp/twitter-xlm-roberta-base-sentim
 const FALLBACK_NEGATIVE = new Set([
   "slow", "slower", "bad", "worse", "worst", "broken", "terrible", "awful", "delay", "lag", "laggy", "frustrating",
   "annoying", "useless", "hate", "buggy", "crash", "crashed", "freezing", "poor", "bekar", "bura", "kharab", "bakwas",
+  "sad", "angry", "mad", "upset", "depressed", "trash", "faltu", "bakwaas", "bekaar",
 ]);
 
 const FALLBACK_POSITIVE = new Set([
   "good", "great", "excellent", "love", "smooth", "fast", "helpful", "reliable", "awesome", "amazing", "perfect",
-  "acha", "accha", "badhiya", "mast",
+  "acha", "accha", "badhiya", "mast", "happy", "joy", "glad", "yay", "badiya", "lit",
 ]);
 
 function mapSentimentPayload(payload, model) {
@@ -39,6 +40,28 @@ function mapSentimentPayload(payload, model) {
     },
     provider: `huggingface-${model}`,
   };
+}
+
+/**
+ * Apply context-aware adjustments based on negation and intensity
+ */
+function applyContextAdjustments(text, score) {
+  const intensityBoost = detectIntensity(text);
+  let adjustedScore = score * intensityBoost;
+  
+  const negationMap = detectNegationContext(text);
+  
+  // If positive/negative words follow negation, flip the sentiment
+  for (const [word, isNegated] of negationMap) {
+    if (isNegated) {
+      // For negated words, invert their sentiment
+      if (word === "good" || word === "great" || word === "bad" || word === "terrible") {
+        adjustedScore = -adjustedScore;
+      }
+    }
+  }
+  
+  return clamp(adjustedScore, -1, 1);
 }
 
 function fallbackSentiment(text) {
@@ -74,9 +97,17 @@ function fallbackSentiment(text) {
 }
 
 async function analyzeSentiment(text, language = "english") {
+  const normalized = normalizeText(text);
   const model = language === "hindi" ? MULTILINGUAL_SENTIMENT_MODEL : ENGLISH_SENTIMENT_MODEL;
-  const payload = await queryModel(model, text);
-  return mapSentimentPayload(payload, model) || fallbackSentiment(text);
+  const payload = await queryModel(model, normalized);
+  let result = mapSentimentPayload(payload, model) || fallbackSentiment(normalized);
+  
+  // Apply context-aware adjustments (negation, intensity)
+  result.score = Number(applyContextAdjustments(text, result.score).toFixed(2));
+  result.sentimentLabel = scoreToLabel(result.score, 0.1);
+  result.sentiment = titleCase(result.sentimentLabel);
+  
+  return result;
 }
 
 function toLegacyComparison(sentimentResult) {
