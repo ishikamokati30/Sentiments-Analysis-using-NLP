@@ -16,6 +16,10 @@ app.use(cors());
 app.use(express.json({ limit: "2mb" }));
 app.use(express.text({ type: ["text/csv", "text/plain"], limit: "2mb" }));
 
+app.get("/", (req, res) => {
+  res.send("Backend is running ✅");
+});
+
 app.get("/health", (_req, res) => {
   res.json({ status: "ok" });
 });
