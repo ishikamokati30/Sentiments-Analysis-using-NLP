@@ -37,7 +37,15 @@ function AiOrbCanvas() {
       <Canvas camera={{ position: [0, 0, 4.8], fov: 45 }}>
         <ambientLight intensity={1.3} />
         <directionalLight position={[2, 2, 2]} intensity={2.2} />
-        <Stars radius={50} depth={20} count={500} factor={3} saturation={0} fade speed={0.75} />
+        <Stars
+          radius={50}
+          depth={20}
+          count={500}
+          factor={3}
+          saturation={0}
+          fade
+          speed={0.75}
+        />
         <Orb />
       </Canvas>
     </div>

@@ -1,61 +1,258 @@
 const HINGLISH_HINTS = new Set([
-  "acha", "accha", "bahut", "bekar", "bura", "gussa", "dhokha", "sahi", "yaar", "hai", "tha", "thi", "pyaar",
-  "mast", "badhiya", "bakwas", "kharab", "jaldi", "der", "theek", "acha", "kyun", "nahi", "matlab",
+  "acha",
+  "accha",
+  "bahut",
+  "bekar",
+  "bura",
+  "gussa",
+  "dhokha",
+  "sahi",
+  "yaar",
+  "hai",
+  "tha",
+  "thi",
+  "pyaar",
+  "mast",
+  "badhiya",
+  "bakwas",
+  "kharab",
+  "jaldi",
+  "der",
+  "theek",
+  "acha",
+  "kyun",
+  "nahi",
+  "matlab",
 ]);
 
 const STOPWORDS = new Set([
-  "a", "an", "the", "and", "or", "but", "for", "with", "that", "this", "these", "those", "are", "was", "were", "is", "am",
-  "be", "been", "being", "to", "of", "in", "on", "at", "it", "its", "i", "we", "you", "they", "he", "she", "them", "our",
-  "your", "my", "me", "him", "her", "their", "have", "has", "had", "do", "did", "does", "not", "just", "what", "needed",
-  "very", "too", "from", "into", "than", "then", "there", "here", "when", "while", "after", "before", "about", "again",
-  "acha", "accha", "hai", "tha", "thi", "bahut", "ke", "ki", "ka", "mein", "main", "aur", "par", "ya", "nahi", "haan",
+  "a",
+  "an",
+  "the",
+  "and",
+  "or",
+  "but",
+  "for",
+  "with",
+  "that",
+  "this",
+  "these",
+  "those",
+  "are",
+  "was",
+  "were",
+  "is",
+  "am",
+  "be",
+  "been",
+  "being",
+  "to",
+  "of",
+  "in",
+  "on",
+  "at",
+  "it",
+  "its",
+  "i",
+  "we",
+  "you",
+  "they",
+  "he",
+  "she",
+  "them",
+  "our",
+  "your",
+  "my",
+  "me",
+  "him",
+  "her",
+  "their",
+  "have",
+  "has",
+  "had",
+  "do",
+  "did",
+  "does",
+  "not",
+  "just",
+  "what",
+  "needed",
+  "very",
+  "too",
+  "from",
+  "into",
+  "than",
+  "then",
+  "there",
+  "here",
+  "when",
+  "while",
+  "after",
+  "before",
+  "about",
+  "again",
+  "acha",
+  "accha",
+  "hai",
+  "tha",
+  "thi",
+  "bahut",
+  "ke",
+  "ki",
+  "ka",
+  "mein",
+  "main",
+  "aur",
+  "par",
+  "ya",
+  "nahi",
+  "haan",
 ]);
 
 // Slang/Colloquial mappings for normalization
 const SLANG_MAPPINGS = {
-  "bohot": "very",
-  "bohut": "very",
-  "bahot": "very",
-  "happyy": "happy",
-  "worstt": "worst",
-  "bestt": "best",
-  "nicee": "nice",
-  "goodd": "good",
-  "reallly": "really",
-  "seriously": "seriously",
-  "lol": "funny",
-  "haha": "happy",
-  "omg": "wow",
-  "srsly": "seriously",
-  "tbh": "honestly",
-  "ngl": "honestly",
-  "bakwaas": "bakwas",
-  "bekaar": "bekar",
-  "badiya": "badhiya",
+  bohot: "very",
+  bohut: "very",
+  bahot: "very",
+  happyy: "happy",
+  worstt: "worst",
+  bestt: "best",
+  nicee: "nice",
+  goodd: "good",
+  reallly: "really",
+  seriously: "seriously",
+  lol: "funny",
+  haha: "happy",
+  omg: "wow",
+  srsly: "seriously",
+  tbh: "honestly",
+  ngl: "honestly",
+  bakwaas: "bakwas",
+  bekaar: "bekar",
+  badiya: "badhiya",
 };
 
 // Intensity modifiers (increase sentiment strength)
 const INTENSITY_MODIFIERS = new Set([
-  "very", "extremely", "absolutely", "totally", "completely", "really", "quite", "so", "such", "immensely", "incredibly",
-  "tremendously", "awfully", "terribly", "remarkably", "exceptionally", "extraordinarily", "bahut", "bohot", "bilkul",
+  "very",
+  "extremely",
+  "absolutely",
+  "totally",
+  "completely",
+  "really",
+  "quite",
+  "so",
+  "such",
+  "immensely",
+  "incredibly",
+  "tremendously",
+  "awfully",
+  "terribly",
+  "remarkably",
+  "exceptionally",
+  "extraordinarily",
+  "bahut",
+  "bohot",
+  "bilkul",
 ]);
 
 const NEGATIVE_WORDS = new Set([
-  "slow", "slower", "laggy", "worse", "worst", "broken", "bad", "terrible", "awful", "poor", "hate", "late", "delay",
-  "bug", "buggy", "freeze", "freezing", "crash", "crashes", "crashed", "useless", "badly", "frustrating", "annoying",
-  "kharab", "bekar", "bura", "bakwas", "ghatiya", "sad", "angry", "mad", "upset", "depressed", "trash", "faltu", "bakwaas", "bekaar",
+  "slow",
+  "slower",
+  "laggy",
+  "worse",
+  "worst",
+  "broken",
+  "bad",
+  "terrible",
+  "awful",
+  "poor",
+  "hate",
+  "late",
+  "delay",
+  "bug",
+  "buggy",
+  "freeze",
+  "freezing",
+  "crash",
+  "crashes",
+  "crashed",
+  "useless",
+  "badly",
+  "frustrating",
+  "annoying",
+  "kharab",
+  "bekar",
+  "bura",
+  "bakwas",
+  "ghatiya",
+  "sad",
+  "angry",
+  "mad",
+  "upset",
+  "depressed",
+  "trash",
+  "faltu",
+  "bakwaas",
+  "bekaar",
 ]);
 
 const POSITIVE_WORDS = new Set([
-  "good", "great", "excellent", "amazing", "awesome", "love", "smooth", "fast", "useful", "helpful", "reliable",
-  "acha", "accha", "badhiya", "mast", "shandar", "happy", "joy", "glad", "yay", "badiya", "lit",
+  "good",
+  "great",
+  "excellent",
+  "amazing",
+  "awesome",
+  "love",
+  "smooth",
+  "fast",
+  "useful",
+  "helpful",
+  "reliable",
+  "acha",
+  "accha",
+  "badhiya",
+  "mast",
+  "shandar",
+  "happy",
+  "joy",
+  "glad",
+  "yay",
+  "badiya",
+  "lit",
 ]);
 
 // Negation words to detect reversed sentiment
 const NEGATION_WORDS = new Set([
-  "not", "no", "never", "neither", "nobody", "nothing", "nowhere", "nope", "nada", "ain't", "isn't", "aren't", "wasn't", "weren't",
-  "don't", "doesn't", "didn't", "haven't", "hasn't", "hadn't", "wouldn't", "couldn't", "shouldn't", "mightn't",
-  "nahi", "nahin", "na", "mat", "nai",
+  "not",
+  "no",
+  "never",
+  "neither",
+  "nobody",
+  "nothing",
+  "nowhere",
+  "nope",
+  "nada",
+  "ain't",
+  "isn't",
+  "aren't",
+  "wasn't",
+  "weren't",
+  "don't",
+  "doesn't",
+  "didn't",
+  "haven't",
+  "hasn't",
+  "hadn't",
+  "wouldn't",
+  "couldn't",
+  "shouldn't",
+  "mightn't",
+  "nahi",
+  "nahin",
+  "na",
+  "mat",
+  "nai",
 ]);
 
 /**
@@ -64,14 +261,14 @@ const NEGATION_WORDS = new Set([
  */
 function normalizeText(text) {
   let normalized = String(text || "").trim();
-  
+
   // Handle repeated characters (keep max 2 consecutive same characters)
   normalized = normalized.replace(/(.)\1{2,}/g, "$1$1");
-  
+
   // Replace slang with standard forms
   const tokens = tokenize(normalized);
-  const processedTokens = tokens.map(token => SLANG_MAPPINGS[token] || token);
-  
+  const processedTokens = tokens.map((token) => SLANG_MAPPINGS[token] || token);
+
   return processedTokens.join(" ");
 }
 
@@ -81,8 +278,10 @@ function normalizeText(text) {
  */
 function detectIntensity(text) {
   const tokens = tokenize(text);
-  const intensityCount = tokens.filter(t => INTENSITY_MODIFIERS.has(t)).length;
-  
+  const intensityCount = tokens.filter((t) =>
+    INTENSITY_MODIFIERS.has(t),
+  ).length;
+
   // Boost sentiment based on intensity
   if (intensityCount >= 2) return 1.4;
   if (intensityCount === 1) return 1.15;
@@ -96,7 +295,7 @@ function detectIntensity(text) {
 function detectNegationContext(text) {
   const sentences = splitSentences(text);
   const negationMap = new Map();
-  
+
   for (const sentence of sentences) {
     const tokens = tokenize(sentence);
     for (let i = 0; i < tokens.length; i++) {
@@ -106,12 +305,16 @@ function detectNegationContext(text) {
       }
     }
   }
-  
+
   return negationMap;
 }
 
 function tokenize(text) {
-  return String(text || "").toLowerCase().match(/[\p{L}\p{N}']+/gu) || [];
+  return (
+    String(text || "")
+      .toLowerCase()
+      .match(/[\p{L}\p{N}']+/gu) || []
+  );
 }
 
 function splitSentences(text) {
@@ -126,7 +329,9 @@ function clamp(value, min, max) {
 }
 
 function normalizeLabel(label) {
-  return String(label || "").trim().toLowerCase();
+  return String(label || "")
+    .trim()
+    .toLowerCase();
 }
 
 function classifySentiment(score, neutralBand = 0.15) {
@@ -173,7 +378,9 @@ function detectLanguage(text) {
   }
 
   const tokens = tokenize(sample);
-  const hinglishHits = tokens.filter((token) => HINGLISH_HINTS.has(token)).length;
+  const hinglishHits = tokens.filter((token) =>
+    HINGLISH_HINTS.has(token),
+  ).length;
 
   if (hinglishHits >= 2) {
     return "hinglish";
@@ -231,7 +438,9 @@ function extractCandidateAspects(text) {
 function getAspectContext(text, aspect) {
   const sentences = splitSentences(text);
   const lowerAspect = aspect.toLowerCase();
-  const sentence = sentences.find((item) => item.toLowerCase().includes(lowerAspect));
+  const sentence = sentences.find((item) =>
+    item.toLowerCase().includes(lowerAspect),
+  );
 
   if (!sentence) {
     return text;
@@ -242,7 +451,9 @@ function getAspectContext(text, aspect) {
     .map((item) => item.trim())
     .filter(Boolean);
 
-  const clause = clauses.find((item) => item.toLowerCase().includes(lowerAspect));
+  const clause = clauses.find((item) =>
+    item.toLowerCase().includes(lowerAspect),
+  );
   return clause || sentence;
 }
 

@@ -5,7 +5,12 @@ function groupDailyTrend(history) {
 
   for (const entry of history) {
     const day = new Date(entry.timestamp).toISOString().slice(0, 10);
-    const current = daily.get(day) || { date: day, positive: 0, negative: 0, neutral: 0 };
+    const current = daily.get(day) || {
+      date: day,
+      positive: 0,
+      negative: 0,
+      neutral: 0,
+    };
     current[entry.sentiment] = (current[entry.sentiment] || 0) + 1;
     daily.set(day, current);
   }

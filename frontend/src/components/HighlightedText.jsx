@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 
 function HighlightedText({ items }) {
   if (!items?.length) {
-    return <p className="text-sm text-slate-500 dark:text-slate-400">No standout keywords detected yet.</p>;
+    return (
+      <p className="text-sm text-slate-500 dark:text-slate-400">
+        No standout keywords detected yet.
+      </p>
+    );
   }
 
   return (

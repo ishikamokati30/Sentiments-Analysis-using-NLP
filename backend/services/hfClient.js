@@ -11,21 +11,24 @@ async function queryModel(model, inputs, options = {}) {
   }
 
   try {
-    const response = await fetch(`https://api-inference.huggingface.co/models/${model}`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.HUGGINGFACE_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        inputs,
-        options: {
-          wait_for_model: true,
-          use_cache: true,
-          ...options,
+    const response = await fetch(
+      `https://api-inference.huggingface.co/models/${model}`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.HUGGINGFACE_API_KEY}`,
+          "Content-Type": "application/json",
         },
-      }),
-    });
+        body: JSON.stringify({
+          inputs,
+          options: {
+            wait_for_model: true,
+            use_cache: true,
+            ...options,
+          },
+        }),
+      },
+    );
 
     if (!response.ok) {
       return null;

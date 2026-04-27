@@ -23,13 +23,16 @@ function HeroPanel({ stats }) {
         className="relative overflow-hidden rounded-[2rem] border border-white/20 bg-white/55 p-7 shadow-glass backdrop-blur-2xl dark:border-white/10 dark:bg-slate-950/45"
       >
         <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-cyan-400 via-violet-500 to-fuchsia-500" />
-        <p className="text-xs uppercase tracking-[0.35em] text-cyan-700 dark:text-cyan-300">AI Sentiment Analytics</p>
+        <p className="text-xs uppercase tracking-[0.35em] text-cyan-700 dark:text-cyan-300">
+          AI Sentiment Analytics
+        </p>
         <h1 className="mt-4 max-w-2xl text-4xl font-semibold leading-tight text-slate-900 dark:text-white md:text-5xl">
           Premium sentiment intelligence with animated insight surfaces.
         </h1>
         <p className="mt-4 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-300">
-          Analyze reviews across sentiment, emotions, sarcasm, spam, and aspect-level breakdowns in a modern SaaS
-          workspace designed for research and operations teams.
+          Analyze reviews across sentiment, emotions, sarcasm, spam, and
+          aspect-level breakdowns in a modern SaaS workspace designed for
+          research and operations teams.
         </p>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
@@ -42,8 +45,12 @@ function HeroPanel({ stats }) {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white dark:bg-white dark:text-slate-950">
                 <Icon className="h-5 w-5" />
               </div>
-              <p className="text-sm text-slate-500 dark:text-slate-400">{label}</p>
-              <p className="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">{stats[key]}</p>
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                {label}
+              </p>
+              <p className="mt-2 text-3xl font-semibold text-slate-900 dark:text-white">
+                {stats[key]}
+              </p>
             </motion.article>
           ))}
         </div>

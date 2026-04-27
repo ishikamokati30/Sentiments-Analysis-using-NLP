@@ -5,7 +5,9 @@ import { loginRequest, signupRequest } from "./authApi";
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
-  const [token, setToken] = useState(() => window.localStorage.getItem("sentiment-token") || "");
+  const [token, setToken] = useState(
+    () => window.localStorage.getItem("sentiment-token") || "",
+  );
   const [user, setUser] = useState(() => {
     try {
       const raw = window.localStorage.getItem("sentiment-user");

@@ -17,7 +17,10 @@ function normalizeEntry(entry) {
     return null;
   }
 
-  const sentiment = typeof entry.sentiment === "string" ? entry.sentiment.trim().toLowerCase() : "";
+  const sentiment =
+    typeof entry.sentiment === "string"
+      ? entry.sentiment.trim().toLowerCase()
+      : "";
 
   if (!sentiment) {
     return null;
@@ -31,12 +34,25 @@ function normalizeEntry(entry) {
     language: typeof entry.language === "string" ? entry.language : "english",
     emotions: entry.emotions || { primary: "neutral", distribution: {} },
     aspects: Array.isArray(entry.aspects) ? entry.aspects : [],
-    sarcasm: entry.sarcasm || { level: "Low", isSarcastic: false, confidence: 0, reasons: [] },
-    spam: entry.spam || { level: "Low", isSpam: false, confidence: 0, reasons: [] },
+    sarcasm: entry.sarcasm || {
+      level: "Low",
+      isSarcastic: false,
+      confidence: 0,
+      reasons: [],
+    },
+    spam: entry.spam || {
+      level: "Low",
+      isSpam: false,
+      confidence: 0,
+      reasons: [],
+    },
     explainability: entry.explainability || { influentialWords: [] },
     wordCloud: Array.isArray(entry.wordCloud) ? entry.wordCloud : [],
     models: entry.models || {},
-    timestamp: typeof entry.timestamp === "string" ? entry.timestamp : new Date().toISOString(),
+    timestamp:
+      typeof entry.timestamp === "string"
+        ? entry.timestamp
+        : new Date().toISOString(),
   };
 }
 
@@ -51,7 +67,10 @@ function WorkspaceApp({ theme, onToggleTheme }) {
 
     async function loadInitialData() {
       try {
-        const [historyPayload, analyticsPayload] = await Promise.all([fetchHistory(), fetchAnalytics()]);
+        const [historyPayload, analyticsPayload] = await Promise.all([
+          fetchHistory(),
+          fetchAnalytics(),
+        ]);
 
         if (!active) {
           return;
@@ -65,9 +84,15 @@ function WorkspaceApp({ theme, onToggleTheme }) {
         }
 
         try {
-          const localHistory = window.localStorage.getItem(`sentiment-history-${user?.email || 'default'}`);
+          const localHistory = window.localStorage.getItem(
+            `sentiment-history-${user?.email || "default"}`,
+          );
           const parsedHistory = localHistory ? JSON.parse(localHistory) : [];
-          setHistory(Array.isArray(parsedHistory) ? parsedHistory.map(normalizeEntry).filter(Boolean) : []);
+          setHistory(
+            Array.isArray(parsedHistory)
+              ? parsedHistory.map(normalizeEntry).filter(Boolean)
+              : [],
+          );
         } catch {
           setHistory([]);
         }
@@ -87,7 +112,10 @@ function WorkspaceApp({ theme, onToggleTheme }) {
 
   useEffect(() => {
     if (user?.email) {
-      window.localStorage.setItem(`sentiment-history-${user.email}`, JSON.stringify(history));
+      window.localStorage.setItem(
+        `sentiment-history-${user.email}`,
+        JSON.stringify(history),
+      );
     }
   }, [history, user]);
 
@@ -102,15 +130,32 @@ function WorkspaceApp({ theme, onToggleTheme }) {
   };
 
   return (
-    <MainLayout onLogout={logout} theme={theme} onToggleTheme={onToggleTheme} user={user}>
+    <MainLayout
+      onLogout={logout}
+      theme={theme}
+      onToggleTheme={onToggleTheme}
+      user={user}
+    >
       <Routes>
         <Route
           path="/"
-          element={<HomePage history={history} onAnalyze={appendHistory} onAnalyticsRefresh={setAnalytics} />}
+          element={
+            <HomePage
+              history={history}
+              onAnalyze={appendHistory}
+              onAnalyticsRefresh={setAnalytics}
+            />
+          }
         />
         <Route
           path="/dashboard"
-          element={<DashboardPage history={history} analytics={analytics} bootstrapping={bootstrapping} />}
+          element={
+            <DashboardPage
+              history={history}
+              analytics={analytics}
+              bootstrapping={bootstrapping}
+            />
+          }
         />
         <Route
           path="/upload"
@@ -118,8 +163,12 @@ function WorkspaceApp({ theme, onToggleTheme }) {
             <FileUploadPage
               onBatchAppend={(updater) => {
                 setHistory((current) => {
-                  const nextHistory = typeof updater === "function" ? updater(current) : updater;
-                  return (Array.isArray(nextHistory) ? nextHistory : current).map(normalizeEntry).filter(Boolean).slice(0, 100);
+                  const nextHistory =
+                    typeof updater === "function" ? updater(current) : updater;
+                  return (Array.isArray(nextHistory) ? nextHistory : current)
+                    .map(normalizeEntry)
+                    .filter(Boolean)
+                    .slice(0, 100);
                 });
               }}
               onAnalyticsRefresh={setAnalytics}
@@ -134,7 +183,9 @@ function WorkspaceApp({ theme, onToggleTheme }) {
 
 function App() {
   const { isAuthenticated } = useAuth();
-  const [theme, setTheme] = useState(() => window.localStorage.getItem("sentiment-theme") || "dark");
+  const [theme, setTheme] = useState(
+    () => window.localStorage.getItem("sentiment-theme") || "dark",
+  );
 
   useEffect(() => {
     window.localStorage.setItem("sentiment-theme", theme);
@@ -147,15 +198,33 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/login" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <LoginPage theme={theme} onToggleTheme={toggleTheme} />} />
-      <Route path="/signup" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <SignupPage theme={theme} onToggleTheme={toggleTheme} />} />
+      <Route
+        path="/login"
+        element={
+          isAuthenticated ? (
+            <Navigate to="/dashboard" replace />
+          ) : (
+            <LoginPage theme={theme} onToggleTheme={toggleTheme} />
+          )
+        }
+      />
+      <Route
+        path="/signup"
+        element={
+          isAuthenticated ? (
+            <Navigate to="/dashboard" replace />
+          ) : (
+            <SignupPage theme={theme} onToggleTheme={toggleTheme} />
+          )
+        }
+      />
       <Route
         path="/*"
-        element={(
+        element={
           <ProtectedRoute>
             <WorkspaceApp theme={theme} onToggleTheme={toggleTheme} />
           </ProtectedRoute>
-        )}
+        }
       />
     </Routes>
   );

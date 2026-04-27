@@ -20,12 +20,27 @@ function explainKeywords(text, sentimentResult, sarcasmResult) {
     const rarityBoost = 1 / (1 + value.positions.length - 1);
     const lexical = lexiconTone(word);
     const polarityWeight =
-      lexical === "positive" ? sentimentResult.probabilities.positive
-        : lexical === "negative" ? sentimentResult.probabilities.negative
+      lexical === "positive"
+        ? sentimentResult.probabilities.positive
+        : lexical === "negative"
+          ? sentimentResult.probabilities.negative
           : Math.max(sentimentResult.confidence - 0.2, 0.08);
-    const sarcasmBoost = sarcasmResult.sarcasm !== "Low" && ["wow", "great", "amazing", "perfect"].includes(word) ? 0.28 : 0;
-    const importance = clamp((tf * 3.4) + rarityBoost + polarityWeight + sarcasmBoost, 0, 2.5);
-    const impact = sarcasmBoost > 0 ? "sarcastic" : lexical !== "neutral" ? lexical : sentimentResult.sentimentLabel;
+    const sarcasmBoost =
+      sarcasmResult.sarcasm !== "Low" &&
+      ["wow", "great", "amazing", "perfect"].includes(word)
+        ? 0.28
+        : 0;
+    const importance = clamp(
+      tf * 3.4 + rarityBoost + polarityWeight + sarcasmBoost,
+      0,
+      2.5,
+    );
+    const impact =
+      sarcasmBoost > 0
+        ? "sarcastic"
+        : lexical !== "neutral"
+          ? lexical
+          : sentimentResult.sentimentLabel;
 
     return {
       word,

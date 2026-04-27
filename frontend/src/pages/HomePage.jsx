@@ -16,8 +16,12 @@ function HomePage({ history, onAnalyze, onAnalyticsRefresh }) {
   const [error, setError] = useState("");
 
   const stats = useMemo(() => {
-    const positives = history.filter((item) => item.sentiment === "positive").length;
-    const risky = history.filter((item) => item.spam?.isSpam || item.sarcasm?.isSarcastic).length;
+    const positives = history.filter(
+      (item) => item.sentiment === "positive",
+    ).length;
+    const risky = history.filter(
+      (item) => item.spam?.isSpam || item.sarcasm?.isSarcastic,
+    ).length;
 
     return {
       total: history.length,
@@ -41,7 +45,11 @@ function HomePage({ history, onAnalyze, onAnalyticsRefresh }) {
       onAnalyze(payload);
       onAnalyticsRefresh(await fetchAnalytics());
     } catch (requestError) {
-      setError(requestError.response?.data?.error || requestError.message || "Request failed.");
+      setError(
+        requestError.response?.data?.error ||
+          requestError.message ||
+          "Request failed.",
+      );
     } finally {
       setLoading(false);
     }
@@ -58,8 +66,12 @@ function HomePage({ history, onAnalyze, onAnalyticsRefresh }) {
         >
           <div className="flex items-start justify-between gap-4">
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-cyan-700 dark:text-cyan-300">Analyzer</p>
-              <h2 className="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">Run advanced multilingual sentiment analytics</h2>
+              <p className="text-xs uppercase tracking-[0.35em] text-cyan-700 dark:text-cyan-300">
+                Analyzer
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold text-slate-900 dark:text-white">
+                Run advanced multilingual sentiment analytics
+              </h2>
             </div>
             <div className="hidden rounded-full bg-cyan-400/15 p-3 text-cyan-700 dark:block dark:text-cyan-300">
               <Sparkles className="h-5 w-5" />
@@ -102,11 +114,16 @@ function HomePage({ history, onAnalyze, onAnalyticsRefresh }) {
               {loading ? "Analyzing..." : "Analyze Advanced Sentiment"}
             </motion.button>
             <span className="text-sm text-slate-500 dark:text-slate-400">
-              Includes score, emotions, aspects, sarcasm, spam, and explainability.
+              Includes score, emotions, aspects, sarcasm, spam, and
+              explainability.
             </span>
           </div>
 
-          {error ? <p className="mt-4 rounded-2xl border border-rose-300/40 bg-rose-100/70 px-4 py-3 text-sm text-rose-700 dark:border-rose-500/20 dark:bg-rose-500/10 dark:text-rose-200">{error}</p> : null}
+          {error ? (
+            <p className="mt-4 rounded-2xl border border-rose-300/40 bg-rose-100/70 px-4 py-3 text-sm text-rose-700 dark:border-rose-500/20 dark:bg-rose-500/10 dark:text-rose-200">
+              {error}
+            </p>
+          ) : null}
         </motion.div>
 
         <ResultCard result={result} />

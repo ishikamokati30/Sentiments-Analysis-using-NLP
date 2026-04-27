@@ -11,8 +11,12 @@ function TopNavbar({ user, theme, onToggleTheme }) {
           <Menu className="h-4 w-4" />
         </div>
         <div>
-          <p className="text-xs uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">Realtime Insights</p>
-          <h2 className="text-xl font-semibold text-slate-900 dark:text-white">Premium sentiment workspace</h2>
+          <p className="text-xs uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">
+            Realtime Insights
+          </p>
+          <h2 className="text-xl font-semibold text-slate-900 dark:text-white">
+            Premium sentiment workspace
+          </h2>
         </div>
       </div>
 
@@ -26,8 +30,12 @@ function TopNavbar({ user, theme, onToggleTheme }) {
             <Sparkles className="h-4 w-4" />
           </div>
           <div>
-            <p className="text-sm font-semibold text-slate-900 dark:text-white">{user?.name || "Analyst"}</p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">{user?.email || "workspace@local"}</p>
+            <p className="text-sm font-semibold text-slate-900 dark:text-white">
+              {user?.name || "Analyst"}
+            </p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
+              {user?.email || "workspace@local"}
+            </p>
           </div>
         </motion.div>
       </div>

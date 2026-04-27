@@ -16,9 +16,12 @@ const {
 function detectSpam(text) {
   const lower = String(text || "").toLowerCase();
   const hasLink = /https?:\/\//.test(lower) || /\bwww\./.test(lower);
-  const hasPromo = /\b(buy now|click here|subscribe|guaranteed|free money)\b/.test(lower);
+  const hasPromo =
+    /\b(buy now|click here|subscribe|guaranteed|free money)\b/.test(lower);
   const repeatedExclamations = (lower.match(/!/g) || []).length >= 4;
-  const uppercaseRatio = text.replace(/[^A-Z]/g, "").length / Math.max(text.replace(/[^A-Za-z]/g, "").length, 1);
+  const uppercaseRatio =
+    text.replace(/[^A-Z]/g, "").length /
+    Math.max(text.replace(/[^A-Za-z]/g, "").length, 1);
 
   let score = 0;
   score += hasLink ? 0.4 : 0;
@@ -26,8 +29,10 @@ function detectSpam(text) {
   score += repeatedExclamations ? 0.15 : 0;
   score += uppercaseRatio > 0.55 ? 0.2 : 0;
 
+  const level = score >= 0.45 ? "High" : score >= 0.2 ? "Medium" : "Low";
   return {
-    spam: score >= 0.45 ? "High" : score >= 0.2 ? "Medium" : "Low",
+    level,
+    isSpam: level === "High",
     confidence: Number(Math.min(score, 1).toFixed(4)),
     reasons: [
       ...(hasLink ? ["contains-link"] : []),
@@ -51,7 +56,10 @@ async function analyzeAspects(text, language) {
     const context = getAspectContext(text, aspect);
     const sentiment = await analyzeSentiment(context, language);
 
-    if (normalizeLabel(sentiment.sentimentLabel) === "neutral" && context === text) {
+    if (
+      normalizeLabel(sentiment.sentimentLabel) === "neutral" &&
+      context === text
+    ) {
       continue;
     }
 
@@ -80,9 +88,7 @@ async function analyzeAspects(text, language) {
   return deduped;
 }
 
-function emotionScores(emotionResult) {
-  return emotionResult.distribution;
-}
+// Function removed since it was redundant with emotionResult.distribution
 
 function moodFromEmotion(primary) {
   if (primary === "happy") {
@@ -107,10 +113,18 @@ async function runAdvancedAnalysis(text) {
   const normalizedText = String(text || "").trim();
   const language = detectLanguage(normalizedText);
   const sentimentResult = await analyzeSentiment(normalizedText, language);
-  const emotionResult = await analyzeEmotions(normalizedText, sentimentResult, language);
+  const emotionResult = await analyzeEmotions(
+    normalizedText,
+    sentimentResult,
+    language,
+  );
   const sarcasmResult = detectSarcasm(normalizedText, sentimentResult);
   const spamResult = detectSpam(normalizedText);
-  const keywords = explainKeywords(normalizedText, sentimentResult, sarcasmResult);
+  const keywords = explainKeywords(
+    normalizedText,
+    sentimentResult,
+    sarcasmResult,
+  );
   const aspects = await analyzeAspects(normalizedText, language);
 
   return {
@@ -127,19 +141,13 @@ async function runAdvancedAnalysis(text) {
       primary: emotionResult.primary,
       distribution: emotionResult.distribution,
     },
-    emotionScores: emotionScores(emotionResult),
     sarcasm: {
-      level: sarcasmResult.sarcasm,
-      isSarcastic: sarcasmResult.sarcasm !== "Low",
+      level: sarcasmResult.sarcasm || sarcasmResult.level,
+      isSarcastic: sarcasmResult.isSarcastic,
       confidence: sarcasmResult.confidence,
       reasons: sarcasmResult.reasons,
     },
-    spam: {
-      level: spamResult.spam,
-      isSpam: spamResult.spam === "High",
-      confidence: spamResult.confidence,
-      reasons: spamResult.reasons,
-    },
+    spam: spamResult,
     aspects,
     keywords,
     explainability: {
@@ -166,7 +174,12 @@ function createLegacyAnalysis(advanced) {
 
 function createConfusionMatrix(records, modelKey) {
   const labels = ["positive", "neutral", "negative"];
-  const matrix = Object.fromEntries(labels.map((actual) => [actual, Object.fromEntries(labels.map((predicted) => [predicted, 0]))]));
+  const matrix = Object.fromEntries(
+    labels.map((actual) => [
+      actual,
+      Object.fromEntries(labels.map((predicted) => [predicted, 0])),
+    ]),
+  );
 
   for (const record of records) {
     const actual = normalizeLabel(record.sentiment);
@@ -237,9 +250,20 @@ async function runStrictFormatAnalysis(text) {
   const normalizedText = String(text || "").trim();
   const language = detectLanguage(normalizedText);
   const sentimentResult = await analyzeSentiment(normalizedText, language);
-  const emotionResult = await analyzeEmotions(normalizedText, sentimentResult, language);
+  const emotionResult = await analyzeEmotions(
+    normalizedText,
+    sentimentResult,
+    language,
+  );
   const sarcasmResult = detectSarcasm(normalizedText, sentimentResult);
-  return formatStrictResponse(normalizedText, null, sentimentResult, emotionResult, sarcasmResult, language);
+  return formatStrictResponse(
+    normalizedText,
+    null,
+    sentimentResult,
+    emotionResult,
+    sarcasmResult,
+    language,
+  );
 }
 
 module.exports = {

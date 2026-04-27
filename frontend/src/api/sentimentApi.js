@@ -7,11 +7,11 @@ export const api = axios.create({
 api.interceptors.request.use((config) => {
   const token = window.localStorage.getItem("sentiment-token");
   const userRaw = window.localStorage.getItem("sentiment-user");
-  
+
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
-  
+
   if (userRaw) {
     try {
       const user = JSON.parse(userRaw);
@@ -22,7 +22,7 @@ api.interceptors.request.use((config) => {
       console.error("Failed to parse user from localStorage", e);
     }
   }
-  
+
   return config;
 });
 

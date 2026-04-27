@@ -21,12 +21,12 @@ function readHistory(userId = null) {
     const raw = fs.readFileSync(HISTORY_FILE, "utf8");
     const parsed = JSON.parse(raw);
     const allRecords = Array.isArray(parsed) ? parsed : [];
-    
+
     // Strict User Isolation
     if (userId) {
-      return allRecords.filter(record => record.userId === String(userId));
+      return allRecords.filter((record) => record.userId === String(userId));
     }
-    
+
     // Do not return all records if no user is specified
     return [];
   } catch {
@@ -50,11 +50,11 @@ function appendHistory(entry, userId = null) {
   } catch {
     history = [];
   }
-  
+
   if (userId) {
     entry.userId = String(userId);
   }
-  
+
   history.unshift(entry);
   writeHistory(history.slice(0, 500));
   return entry;

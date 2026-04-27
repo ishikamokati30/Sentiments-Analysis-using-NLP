@@ -3,7 +3,10 @@ const cors = require("cors");
 
 const { analyzeText } = require("./helpers/analyzeText");
 const { buildAnalytics } = require("./services/analyticsService");
-const { runAdvancedAnalysis, runStrictFormatAnalysis } = require("./services/nlpService");
+const {
+  runAdvancedAnalysis,
+  runStrictFormatAnalysis,
+} = require("./services/nlpService");
 const { appendHistory, readHistory } = require("./services/storageService");
 
 const app = express();
@@ -22,14 +25,16 @@ function requireAuth(req, res, next) {
   const userIdHeader = req.headers["x-user-id"];
   const userIdBody = req.body && req.body.userId;
   const userIdQuery = req.query.userId;
-  
+
   // Try to get user ID from headers, body, or query params
   const userId = userIdHeader || userIdBody || userIdQuery;
-  
+
   if (!userId) {
-    return res.status(401).json({ error: "Unauthorized: Missing user identification." });
+    return res
+      .status(401)
+      .json({ error: "Unauthorized: Missing user identification." });
   }
-  
+
   req.userId = String(userId);
   next();
 }
@@ -49,13 +54,19 @@ function parseCsvContent(csvContent) {
   }
 
   const [header, ...rest] = rows;
-  const headerColumns = header.split(",").map((column) => column.trim().toLowerCase());
-  const textIndex = headerColumns.findIndex((column) => ["text", "review", "content", "feedback"].includes(column));
+  const headerColumns = header
+    .split(",")
+    .map((column) => column.trim().toLowerCase());
+  const textIndex = headerColumns.findIndex((column) =>
+    ["text", "review", "content", "feedback"].includes(column),
+  );
   const dataRows = textIndex >= 0 ? rest : rows;
 
   return dataRows
     .map((row) => {
-      const columns = row.split(",").map((column) => column.trim().replace(/^"|"$/g, ""));
+      const columns = row
+        .split(",")
+        .map((column) => column.trim().replace(/^"|"$/g, ""));
       return textIndex >= 0 ? columns[textIndex] : columns[0];
     })
     .filter((value) => typeof value === "string" && value.trim());
@@ -65,7 +76,9 @@ async function handleAnalyze(req, res) {
   const { text } = req.body || {};
 
   if (!validateTextInput(text)) {
-    return res.status(400).json({ error: "A non-empty 'text' field is required." });
+    return res
+      .status(400)
+      .json({ error: "A non-empty 'text' field is required." });
   }
 
   try {
@@ -83,7 +96,9 @@ app.post("/analyze-advanced", requireAuth, async (req, res) => {
   const { text } = req.body || {};
 
   if (!validateTextInput(text)) {
-    return res.status(400).json({ error: "A non-empty 'text' field is required." });
+    return res
+      .status(400)
+      .json({ error: "A non-empty 'text' field is required." });
   }
 
   try {
@@ -99,7 +114,9 @@ app.post("/analyze-strict", async (req, res) => {
   const { text } = req.body || {};
 
   if (!validateTextInput(text)) {
-    return res.status(400).json({ error: "A non-empty 'text' field is required." });
+    return res
+      .status(400)
+      .json({ error: "A non-empty 'text' field is required." });
   }
 
   try {
@@ -111,13 +128,14 @@ app.post("/analyze-strict", async (req, res) => {
 });
 
 app.post("/batch-analyze", requireAuth, async (req, res) => {
-  const { csvContent } = typeof req.body === "string" 
-    ? { csvContent: req.body } 
-    : req.body || {};
+  const { csvContent } =
+    typeof req.body === "string" ? { csvContent: req.body } : req.body || {};
   const rows = parseCsvContent(csvContent);
 
   if (!rows.length) {
-    return res.status(400).json({ error: "CSV content is required with at least one text row." });
+    return res
+      .status(400)
+      .json({ error: "CSV content is required with at least one text row." });
   }
 
   try {
@@ -151,7 +169,7 @@ app.get("/history", requireAuth, (req, res) => {
 // User Isolation Endpoints
 app.post("/save", requireAuth, (req, res) => {
   const { data } = req.body || {};
-  
+
   if (!data || typeof data !== "object") {
     return res.status(400).json({ error: "Invalid data." });
   }
@@ -159,21 +177,21 @@ app.post("/save", requireAuth, (req, res) => {
   // Ensure record is saved with strict userId
   const record = { ...data, userId: req.userId };
   appendHistory(record, req.userId);
-  
+
   return res.json({
     status: "saved",
     userId: req.userId,
-    record: record
+    record: record,
   });
 });
 
 app.post("/get_dashboard", requireAuth, (req, res) => {
   // Fetch only records for this specific user
   const records = readHistory(req.userId);
-  
+
   return res.json({
     userId: req.userId,
-    records: records
+    records: records,
   });
 });
 

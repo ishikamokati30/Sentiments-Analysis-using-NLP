@@ -7,7 +7,9 @@ function ConfidenceMeter({ score = 0 }) {
     <div className="rounded-[1.5rem] border border-white/20 bg-white/60 p-4 backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
       <div className="mb-3 flex items-center justify-between text-sm font-medium text-slate-600 dark:text-slate-300">
         <span>Sentiment score</span>
-        <strong className="text-slate-900 dark:text-white">{Number(score).toFixed(2)}</strong>
+        <strong className="text-slate-900 dark:text-white">
+          {Number(score).toFixed(2)}
+        </strong>
       </div>
       <div className="h-4 overflow-hidden rounded-full bg-slate-200/80 dark:bg-slate-800">
         <motion.div

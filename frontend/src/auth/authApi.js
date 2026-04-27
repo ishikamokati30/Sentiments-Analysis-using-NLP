@@ -5,7 +5,9 @@ function createFallbackToken(user) {
 }
 
 function persistFallbackUser(user) {
-  const existing = JSON.parse(window.localStorage.getItem("sentiment-users") || "[]");
+  const existing = JSON.parse(
+    window.localStorage.getItem("sentiment-users") || "[]",
+  );
   const filtered = existing.filter((item) => item.email !== user.email);
   const next = [...filtered, user];
   window.localStorage.setItem("sentiment-users", JSON.stringify(next));
@@ -42,8 +44,13 @@ export async function loginRequest(payload) {
       throw error;
     }
 
-    const existing = JSON.parse(window.localStorage.getItem("sentiment-users") || "[]");
-    const matched = existing.find((item) => item.email === payload.email && item.password === payload.password);
+    const existing = JSON.parse(
+      window.localStorage.getItem("sentiment-users") || "[]",
+    );
+    const matched = existing.find(
+      (item) =>
+        item.email === payload.email && item.password === payload.password,
+    );
 
     if (!matched) {
       throw new Error("Invalid email or password.");

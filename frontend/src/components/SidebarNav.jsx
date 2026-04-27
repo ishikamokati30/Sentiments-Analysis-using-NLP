@@ -12,8 +12,12 @@ function SidebarNav({ onLogout }) {
   return (
     <aside className="hidden w-72 shrink-0 rounded-[2rem] border border-white/20 bg-white/55 p-5 shadow-glass backdrop-blur-2xl dark:border-white/10 dark:bg-slate-950/50 lg:flex lg:flex-col">
       <div className="mb-10">
-        <p className="text-xs uppercase tracking-[0.35em] text-cyan-700 dark:text-cyan-300">SentimentOS</p>
-        <h1 className="mt-3 text-2xl font-semibold text-slate-900 dark:text-white">AI signal command center</h1>
+        <p className="text-xs uppercase tracking-[0.35em] text-cyan-700 dark:text-cyan-300">
+          SentimentOS
+        </p>
+        <h1 className="mt-3 text-2xl font-semibold text-slate-900 dark:text-white">
+          AI signal command center
+        </h1>
       </div>
 
       <nav className="space-y-3">

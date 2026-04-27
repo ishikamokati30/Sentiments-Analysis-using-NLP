@@ -9,15 +9,21 @@ function HistoryList({ history, compact = false }) {
       return history;
     }
 
-    return history.filter((item) => item.sentiment === filter || item.language === filter);
+    return history.filter(
+      (item) => item.sentiment === filter || item.language === filter,
+    );
   }, [filter, history]);
 
   return (
     <section className="rounded-[2rem] border border-white/20 bg-white/55 p-6 shadow-glass backdrop-blur-2xl dark:border-white/10 dark:bg-slate-950/45">
       <div className="mb-5 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="text-xs uppercase tracking-[0.32em] text-cyan-700 dark:text-cyan-300">History</p>
-          <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">{compact ? "Recent predictions" : "History table with filters"}</h2>
+          <p className="text-xs uppercase tracking-[0.32em] text-cyan-700 dark:text-cyan-300">
+            History
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold text-slate-900 dark:text-white">
+            {compact ? "Recent predictions" : "History table with filters"}
+          </h2>
         </div>
         <select
           value={filter}
@@ -56,28 +62,42 @@ function HistoryList({ history, compact = false }) {
                   transition={{ delay: index * 0.02 }}
                   className="border-b border-white/10 last:border-0"
                 >
-                  <td className="max-w-[420px] px-3 py-4 text-slate-700 dark:text-slate-200">{item.text.slice(0, compact ? 80 : 120)}</td>
+                  <td className="max-w-[420px] px-3 py-4 text-slate-700 dark:text-slate-200">
+                    {item.text.slice(0, compact ? 80 : 120)}
+                  </td>
                   <td className="px-3 py-4">
-                    <span className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] ${
-                      item.sentiment === "positive"
-                        ? "bg-emerald-400/15 text-emerald-700 dark:text-emerald-300"
-                        : item.sentiment === "negative"
-                          ? "bg-rose-400/15 text-rose-700 dark:text-rose-300"
-                          : "bg-amber-400/15 text-amber-700 dark:text-amber-300"
-                    }`}>
+                    <span
+                      className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] ${
+                        item.sentiment === "positive"
+                          ? "bg-emerald-400/15 text-emerald-700 dark:text-emerald-300"
+                          : item.sentiment === "negative"
+                            ? "bg-rose-400/15 text-rose-700 dark:text-rose-300"
+                            : "bg-amber-400/15 text-amber-700 dark:text-amber-300"
+                      }`}
+                    >
                       {item.sentiment}
                     </span>
                   </td>
-                  <td className="px-3 py-4 text-slate-600 dark:text-slate-300">{Number(item.sentimentScore).toFixed(2)}</td>
-                  <td className="px-3 py-4 text-slate-600 dark:text-slate-300">{item.emotions?.primary || "neutral"}</td>
-                  <td className="px-3 py-4 text-slate-600 dark:text-slate-300">{item.language}</td>
-                  <td className="px-3 py-4 text-slate-500 dark:text-slate-400">{new Date(item.timestamp).toLocaleString()}</td>
+                  <td className="px-3 py-4 text-slate-600 dark:text-slate-300">
+                    {Number(item.sentimentScore).toFixed(2)}
+                  </td>
+                  <td className="px-3 py-4 text-slate-600 dark:text-slate-300">
+                    {item.emotions?.primary || "neutral"}
+                  </td>
+                  <td className="px-3 py-4 text-slate-600 dark:text-slate-300">
+                    {item.language}
+                  </td>
+                  <td className="px-3 py-4 text-slate-500 dark:text-slate-400">
+                    {new Date(item.timestamp).toLocaleString()}
+                  </td>
                 </motion.tr>
               ))}
             </tbody>
           </table>
         ) : (
-          <p className="text-sm text-slate-500 dark:text-slate-400">No analysis history matches the current filter.</p>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            No analysis history matches the current filter.
+          </p>
         )}
       </div>
     </section>

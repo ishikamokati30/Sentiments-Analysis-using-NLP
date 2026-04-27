@@ -1,5 +1,1201 @@
 [
   {
+    "text": "it was the worst experience i hasd",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -0.43,
+    "sentimentScore": -0.43,
+    "confidence": 0.7143,
+    "probabilities": {
+      "positive": 0.1071,
+      "neutral": 0.1786,
+      "negative": 0.7143
+    },
+    "language": "english",
+    "mood": "Angry 😡",
+    "emotions": {
+      "primary": "angry",
+      "distribution": {
+        "happy": 0.02,
+        "sad": 0.15,
+        "angry": 0.6,
+        "fear": 0.1,
+        "surprise": 0.05,
+        "neutral": 0.08
+      }
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0.16,
+      "reasons": [
+        "negative-context:worst"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "the worst experience",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.43,
+        "confidence": 0.7143
+      },
+      {
+        "aspect": "worst experience i",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.43,
+        "confidence": 0.7143
+      }
+    ],
+    "keywords": [
+      {
+        "word": "worst",
+        "impact": "negative",
+        "importance": 2.2
+      },
+      {
+        "word": "experience",
+        "impact": "negative",
+        "importance": 2
+      },
+      {
+        "word": "hasd",
+        "impact": "negative",
+        "importance": 2
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "worst",
+          "label": "negative",
+          "weight": 2.2
+        },
+        {
+          "word": "experience",
+          "label": "negative",
+          "weight": 2
+        },
+        {
+          "word": "hasd",
+          "label": "negative",
+          "weight": 2
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "worst",
+        "count": 1
+      },
+      {
+        "value": "experience",
+        "count": 1
+      },
+      {
+        "value": "hasd",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -0.43,
+        "confidence": 0.7143,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -0.43,
+        "confidence": 0.7143,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -0.43,
+        "confidence": 0.7143,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-27T12:45:27.594Z",
+    "userId": "ishika@gmail.com"
+  },
+  {
+    "text": "Camera is so disrespectful",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.06,
+        "sad": 0.06,
+        "angry": 0.06,
+        "fear": 0.06,
+        "surprise": 0.06,
+        "neutral": 0.7
+      }
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "camera",
+        "impact": "neutral",
+        "importance": 2.15
+      },
+      {
+        "word": "disrespectful",
+        "impact": "neutral",
+        "importance": 2.15
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "camera",
+          "label": "neutral",
+          "weight": 2.15
+        },
+        {
+          "word": "disrespectful",
+          "label": "neutral",
+          "weight": 2.15
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "camera",
+        "count": 1
+      },
+      {
+        "value": "disrespectful",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-27T12:45:03.401Z",
+    "userId": "ishika@gmail.com"
+  },
+  {
+    "text": "Woww just what i neede,.....a slower app",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -0.38,
+    "sentimentScore": -0.38,
+    "confidence": 0.6875,
+    "probabilities": {
+      "positive": 0.125,
+      "neutral": 0.1875,
+      "negative": 0.6875
+    },
+    "language": "english",
+    "mood": "Angry 😡",
+    "emotions": {
+      "primary": "angry",
+      "distribution": {
+        "happy": 0.0154,
+        "sad": 0.2692,
+        "angry": 0.3077,
+        "fear": 0.0769,
+        "surprise": 0.2692,
+        "neutral": 0.0615
+      }
+    },
+    "sarcasm": {
+      "level": "High",
+      "isSarcastic": true,
+      "confidence": 0.68,
+      "reasons": [
+        "wow",
+        "negative-context:slow",
+        "negative-context:slower",
+        "ellipsis-tone"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "woww",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "slower app",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.5,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "slower",
+        "impact": "negative",
+        "importance": 2.1125
+      },
+      {
+        "word": "woww",
+        "impact": "negative",
+        "importance": 1.9125
+      },
+      {
+        "word": "neede",
+        "impact": "negative",
+        "importance": 1.9125
+      },
+      {
+        "word": "app",
+        "impact": "negative",
+        "importance": 1.9125
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "slower",
+          "label": "negative",
+          "weight": 2.1125
+        },
+        {
+          "word": "woww",
+          "label": "negative",
+          "weight": 1.9125
+        },
+        {
+          "word": "neede",
+          "label": "negative",
+          "weight": 1.9125
+        },
+        {
+          "word": "app",
+          "label": "negative",
+          "weight": 1.9125
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "woww",
+        "count": 1
+      },
+      {
+        "value": "neede",
+        "count": 1
+      },
+      {
+        "value": "slower",
+        "count": 1
+      },
+      {
+        "value": "app",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -0.38,
+        "confidence": 0.6875,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-27T12:44:27.115Z",
+    "userId": "ishika@gmail.com"
+  },
+  {
+    "text": "I’m not arguing, I’m just explaining why I’m right.",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.06,
+        "sad": 0.06,
+        "angry": 0.06,
+        "fear": 0.06,
+        "surprise": 0.06,
+        "neutral": 0.7
+      }
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "i’m",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      }
+    ],
+    "keywords": [
+      {
+        "word": "arguing",
+        "impact": "neutral",
+        "importance": 1.5833
+      },
+      {
+        "word": "explaining",
+        "impact": "neutral",
+        "importance": 1.5833
+      },
+      {
+        "word": "why",
+        "impact": "neutral",
+        "importance": 1.5833
+      },
+      {
+        "word": "right",
+        "impact": "neutral",
+        "importance": 1.5833
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "arguing",
+          "label": "neutral",
+          "weight": 1.5833
+        },
+        {
+          "word": "explaining",
+          "label": "neutral",
+          "weight": 1.5833
+        },
+        {
+          "word": "why",
+          "label": "neutral",
+          "weight": 1.5833
+        },
+        {
+          "word": "right",
+          "label": "neutral",
+          "weight": 1.5833
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "arguing",
+        "count": 1
+      },
+      {
+        "value": "explaining",
+        "count": 1
+      },
+      {
+        "value": "why",
+        "count": 1
+      },
+      {
+        "value": "right",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-27T09:56:35.183Z",
+    "userId": "abhamokati@gmail.com"
+  },
+  {
+    "text": "You bring everyone so much joy… when you leave the room.",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.31,
+    "sentimentScore": 0.31,
+    "confidence": 0.6364,
+    "probabilities": {
+      "positive": 0.6364,
+      "neutral": 0.2045,
+      "negative": 0.1591
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.65,
+        "sad": 0.02,
+        "angry": 0.02,
+        "fear": 0.05,
+        "surprise": 0.16,
+        "neutral": 0.1
+      }
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0.12,
+      "reasons": [
+        "ellipsis-tone"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "everyone",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "much joy…",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "the room.",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      },
+      {
+        "aspect": "joy…",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "room.",
+        "sentiment": "neutral",
+        "sentimentDisplay": "Neutral",
+        "score": 0,
+        "confidence": 0.5
+      }
+    ],
+    "keywords": [
+      {
+        "word": "joy",
+        "impact": "positive",
+        "importance": 1.9455
+      },
+      {
+        "word": "bring",
+        "impact": "positive",
+        "importance": 1.7455
+      },
+      {
+        "word": "everyone",
+        "impact": "positive",
+        "importance": 1.7455
+      },
+      {
+        "word": "much",
+        "impact": "positive",
+        "importance": 1.7455
+      },
+      {
+        "word": "leave",
+        "impact": "positive",
+        "importance": 1.7455
+      },
+      {
+        "word": "room",
+        "impact": "positive",
+        "importance": 1.7455
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "joy",
+          "label": "positive",
+          "weight": 1.9455
+        },
+        {
+          "word": "bring",
+          "label": "positive",
+          "weight": 1.7455
+        },
+        {
+          "word": "everyone",
+          "label": "positive",
+          "weight": 1.7455
+        },
+        {
+          "word": "much",
+          "label": "positive",
+          "weight": 1.7455
+        },
+        {
+          "word": "leave",
+          "label": "positive",
+          "weight": 1.7455
+        },
+        {
+          "word": "room",
+          "label": "positive",
+          "weight": 1.7455
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "bring",
+        "count": 1
+      },
+      {
+        "value": "everyone",
+        "count": 1
+      },
+      {
+        "value": "much",
+        "count": 1
+      },
+      {
+        "value": "joy",
+        "count": 1
+      },
+      {
+        "value": "leave",
+        "count": 1
+      },
+      {
+        "value": "room",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.31,
+        "confidence": 0.6364,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.31,
+        "confidence": 0.6364,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.31,
+        "confidence": 0.6364,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-27T09:56:12.643Z",
+    "userId": "abhamokati@gmail.com"
+  },
+  {
+    "text": "i am so happyy",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.57,
+    "sentimentScore": 0.57,
+    "confidence": 0.75,
+    "probabilities": {
+      "positive": 0.75,
+      "neutral": 0.1667,
+      "negative": 0.0833
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.65,
+        "sad": 0.02,
+        "angry": 0.02,
+        "fear": 0.05,
+        "surprise": 0.16,
+        "neutral": 0.1
+      }
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "happyy",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "happyy",
+        "impact": "positive",
+        "importance": 2.4
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "happyy",
+          "label": "positive",
+          "weight": 2.4
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "happyy",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-27T09:51:09.552Z",
+    "userId": "ishika@gmail.com"
+  },
+  {
+    "text": "bas ye hi sunna baki ttha",
+    "sentiment": "neutral",
+    "sentimentDisplay": "Neutral",
+    "score": 0,
+    "sentimentScore": 0,
+    "confidence": 0.5,
+    "probabilities": {
+      "positive": 0.25,
+      "neutral": 0.5,
+      "negative": 0.25
+    },
+    "language": "english",
+    "mood": "Neutral 😐",
+    "emotions": {
+      "primary": "neutral",
+      "distribution": {
+        "happy": 0.06,
+        "sad": 0.06,
+        "angry": 0.06,
+        "fear": 0.06,
+        "surprise": 0.06,
+        "neutral": 0.7
+      }
+    },
+    "emotionScores": {
+      "happy": 0.06,
+      "sad": 0.06,
+      "angry": 0.06,
+      "fear": 0.06,
+      "surprise": 0.06,
+      "neutral": 0.7
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [],
+    "keywords": [
+      {
+        "word": "bas",
+        "impact": "neutral",
+        "importance": 1.8667
+      },
+      {
+        "word": "sunna",
+        "impact": "neutral",
+        "importance": 1.8667
+      },
+      {
+        "word": "baki",
+        "impact": "neutral",
+        "importance": 1.8667
+      },
+      {
+        "word": "ttha",
+        "impact": "neutral",
+        "importance": 1.8667
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "bas",
+          "label": "neutral",
+          "weight": 1.8667
+        },
+        {
+          "word": "sunna",
+          "label": "neutral",
+          "weight": 1.8667
+        },
+        {
+          "word": "baki",
+          "label": "neutral",
+          "weight": 1.8667
+        },
+        {
+          "word": "ttha",
+          "label": "neutral",
+          "weight": 1.8667
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "bas",
+        "count": 1
+      },
+      {
+        "value": "sunna",
+        "count": 1
+      },
+      {
+        "value": "baki",
+        "count": 1
+      },
+      {
+        "value": "ttha",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "neutral",
+        "score": 0,
+        "confidence": 0.5,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T16:53:23.306Z",
+    "userId": "ishika@gmail.com"
+  },
+  {
+    "text": "such a terrible day",
+    "sentiment": "negative",
+    "sentimentDisplay": "Negative",
+    "score": -0.57,
+    "sentimentScore": -0.57,
+    "confidence": 0.75,
+    "probabilities": {
+      "positive": 0.0833,
+      "neutral": 0.1667,
+      "negative": 0.75
+    },
+    "language": "english",
+    "mood": "Angry 😡",
+    "emotions": {
+      "primary": "angry",
+      "distribution": {
+        "happy": 0.02,
+        "sad": 0.15,
+        "angry": 0.6,
+        "fear": 0.1,
+        "surprise": 0.05,
+        "neutral": 0.08
+      }
+    },
+    "emotionScores": {
+      "happy": 0.02,
+      "sad": 0.15,
+      "angry": 0.6,
+      "fear": 0.1,
+      "surprise": 0.05,
+      "neutral": 0.08
+    },
+    "sarcasm": {
+      "level": "Medium",
+      "isSarcastic": true,
+      "confidence": 0.36,
+      "reasons": [
+        "negative-context:terrible",
+        "exaggerated-intensity"
+      ]
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "a terrible day",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.57,
+        "confidence": 0.75
+      },
+      {
+        "aspect": "terrible day",
+        "sentiment": "negative",
+        "sentimentDisplay": "Negative",
+        "score": -0.57,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "terrible",
+        "impact": "negative",
+        "importance": 2.5
+      },
+      {
+        "word": "such",
+        "impact": "negative",
+        "importance": 2.4
+      },
+      {
+        "word": "day",
+        "impact": "negative",
+        "importance": 2.4
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "terrible",
+          "label": "negative",
+          "weight": 2.5
+        },
+        {
+          "word": "such",
+          "label": "negative",
+          "weight": 2.4
+        },
+        {
+          "word": "day",
+          "label": "negative",
+          "weight": 2.4
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "such",
+        "count": 1
+      },
+      {
+        "value": "terrible",
+        "count": 1
+      },
+      {
+        "value": "day",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "negative",
+        "score": -0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "negative",
+        "score": -0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "negative",
+        "score": -0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T16:53:03.806Z",
+    "userId": "ishika@gmail.com"
+  },
+  {
+    "text": "so sooo happyy forr youu",
+    "sentiment": "positive",
+    "sentimentDisplay": "Positive",
+    "score": 0.57,
+    "sentimentScore": 0.57,
+    "confidence": 0.75,
+    "probabilities": {
+      "positive": 0.75,
+      "neutral": 0.1667,
+      "negative": 0.0833
+    },
+    "language": "english",
+    "mood": "Happy 😊",
+    "emotions": {
+      "primary": "happy",
+      "distribution": {
+        "happy": 0.65,
+        "sad": 0.02,
+        "angry": 0.02,
+        "fear": 0.05,
+        "surprise": 0.16,
+        "neutral": 0.1
+      }
+    },
+    "emotionScores": {
+      "happy": 0.65,
+      "sad": 0.02,
+      "angry": 0.02,
+      "fear": 0.05,
+      "surprise": 0.16,
+      "neutral": 0.1
+    },
+    "sarcasm": {
+      "level": "Low",
+      "isSarcastic": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "spam": {
+      "level": "Low",
+      "isSpam": false,
+      "confidence": 0,
+      "reasons": []
+    },
+    "aspects": [
+      {
+        "aspect": "happyy forr youu",
+        "sentiment": "positive",
+        "sentimentDisplay": "Positive",
+        "score": 0.57,
+        "confidence": 0.75
+      }
+    ],
+    "keywords": [
+      {
+        "word": "sooo",
+        "impact": "positive",
+        "importance": 2.23
+      },
+      {
+        "word": "happyy",
+        "impact": "positive",
+        "importance": 2.23
+      },
+      {
+        "word": "forr",
+        "impact": "positive",
+        "importance": 2.23
+      },
+      {
+        "word": "youu",
+        "impact": "positive",
+        "importance": 2.23
+      }
+    ],
+    "explainability": {
+      "influentialWords": [
+        {
+          "word": "sooo",
+          "label": "positive",
+          "weight": 2.23
+        },
+        {
+          "word": "happyy",
+          "label": "positive",
+          "weight": 2.23
+        },
+        {
+          "word": "forr",
+          "label": "positive",
+          "weight": 2.23
+        },
+        {
+          "word": "youu",
+          "label": "positive",
+          "weight": 2.23
+        }
+      ]
+    },
+    "wordCloud": [
+      {
+        "value": "sooo",
+        "count": 1
+      },
+      {
+        "value": "happyy",
+        "count": 1
+      },
+      {
+        "value": "forr",
+        "count": 1
+      },
+      {
+        "value": "youu",
+        "count": 1
+      }
+    ],
+    "models": {
+      "ruleBased": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "mlModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      },
+      "transformerModel": {
+        "label": "positive",
+        "score": 0.57,
+        "confidence": 0.75,
+        "provider": "fallback-lexical-sentiment"
+      }
+    },
+    "timestamp": "2026-04-26T16:52:37.144Z",
+    "userId": "ishika@gmail.com"
+  },
+  {
     "text": "wowww what a surprise",
     "sentiment": "neutral",
     "sentimentDisplay": "Neutral",

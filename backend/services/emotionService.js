@@ -19,7 +19,11 @@ function normalizeEmotionLabel(label) {
 }
 
 function mapEmotionPayload(payload) {
-  const predictions = Array.isArray(payload?.[0]) ? payload[0] : Array.isArray(payload) ? payload : [];
+  const predictions = Array.isArray(payload?.[0])
+    ? payload[0]
+    : Array.isArray(payload)
+      ? payload
+      : [];
 
   if (!predictions.length) {
     return null;
@@ -34,12 +38,18 @@ function mapEmotionPayload(payload) {
     }
   }
 
-  const primary = Object.entries(emotions).sort((left, right) => right[1] - left[1])[0]?.[0] || "neutral";
+  const primary =
+    Object.entries(emotions).sort(
+      (left, right) => right[1] - left[1],
+    )[0]?.[0] || "neutral";
 
   return {
     primary,
     distribution: Object.fromEntries(
-      Object.entries(emotions).map(([key, value]) => [key, Number(value.toFixed(4))]),
+      Object.entries(emotions).map(([key, value]) => [
+        key,
+        Number(value.toFixed(4)),
+      ]),
     ),
     provider: `huggingface-${EMOTION_MODEL}`,
   };
@@ -48,32 +58,43 @@ function mapEmotionPayload(payload) {
 function fallbackEmotion(sentimentResult, text = "") {
   const score = sentimentResult.score;
   const lowerText = text.toLowerCase();
-  
-  let distribution = { happy: 0.05, sad: 0.05, angry: 0.05, fear: 0.05, surprise: 0.05, neutral: 0.05 };
+
+  let distribution = {
+    happy: 0.05,
+    sad: 0.05,
+    angry: 0.05,
+    fear: 0.05,
+    surprise: 0.05,
+    neutral: 0.05,
+  };
 
   if (score >= 0.15) {
     distribution.happy = 0.65;
     distribution.sad = 0.02;
     distribution.angry = 0.02;
     distribution.surprise = 0.16;
-    distribution.neutral = 0.10;
+    distribution.neutral = 0.1;
   } else if (score <= -0.15) {
     distribution.happy = 0.02;
     distribution.neutral = 0.08;
-    distribution.fear = 0.10;
-    
-    if (/(terrible|frustrating|hate|angry|mad|worst|bakwaas|trash|useless)/.test(lowerText)) {
-      distribution.angry = 0.60;
+    distribution.fear = 0.1;
+
+    if (
+      /(terrible|frustrating|hate|angry|mad|worst|bakwaas|trash|useless)/.test(
+        lowerText,
+      )
+    ) {
+      distribution.angry = 0.6;
       distribution.sad = 0.15;
     } else if (/(sad|depressed|heartbroken|cry|miserable)/.test(lowerText)) {
-      distribution.sad = 0.60;
+      distribution.sad = 0.6;
       distribution.angry = 0.15;
     } else {
-      distribution.angry = 0.40;
+      distribution.angry = 0.4;
       distribution.sad = 0.35;
     }
   } else {
-    distribution.neutral = 0.70;
+    distribution.neutral = 0.7;
     distribution.happy = 0.06;
     distribution.sad = 0.06;
     distribution.angry = 0.06;
@@ -82,14 +103,22 @@ function fallbackEmotion(sentimentResult, text = "") {
   }
 
   if (/(wow|unexpected|shocking|omg|surprise)/.test(lowerText)) {
-    distribution.surprise += 0.30;
+    distribution.surprise += 0.3;
   }
 
-  const total = Object.values(distribution).reduce((sum, value) => sum + value, 0);
-  const normalized = Object.fromEntries(
-    Object.entries(distribution).map(([key, value]) => [key, Number((value / total).toFixed(4))]),
+  const total = Object.values(distribution).reduce(
+    (sum, value) => sum + value,
+    0,
   );
-  const primary = Object.entries(normalized).sort((left, right) => right[1] - left[1])[0][0];
+  const normalized = Object.fromEntries(
+    Object.entries(distribution).map(([key, value]) => [
+      key,
+      Number((value / total).toFixed(4)),
+    ]),
+  );
+  const primary = Object.entries(normalized).sort(
+    (left, right) => right[1] - left[1],
+  )[0][0];
 
   return {
     primary,
