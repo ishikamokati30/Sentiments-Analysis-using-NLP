@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export const api = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL || "http://127.0.0.1:4000",
-});
+const API = import.meta.env.VITE_API_URL;
+
+export const api = axios.create();
 
 api.interceptors.request.use((config) => {
   const token = window.localStorage.getItem("sentiment-token");
@@ -27,26 +27,26 @@ api.interceptors.request.use((config) => {
 });
 
 export async function analyzeText(text) {
-  const { data } = await api.post("/analyze", { text });
+  const { data } = await api.post(`${API}/analyze`, { text });
   return data;
 }
 
 export async function analyzeTextAdvanced(text) {
-  const { data } = await api.post("/analyze-advanced", { text });
+  const { data } = await api.post(`${API}/analyze-advanced`, { text });
   return data;
 }
 
 export async function fetchAnalytics() {
-  const { data } = await api.get("/analytics");
+  const { data } = await api.get(`${API}/analytics`);
   return data;
 }
 
 export async function fetchHistory() {
-  const { data } = await api.get("/history");
+  const { data } = await api.get(`${API}/history`);
   return Array.isArray(data) ? data : [];
 }
 
 export async function batchAnalyzeCsv(csvContent) {
-  const { data } = await api.post("/batch-analyze", { csvContent });
+  const { data } = await api.post(`${API}/batch-analyze`, { csvContent });
   return data;
 }

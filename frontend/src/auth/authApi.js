@@ -1,5 +1,7 @@
 import { api } from "../api/sentimentApi";
 
+const API = import.meta.env.VITE_API_URL;
+
 function createFallbackToken(user) {
   return `local.${btoa(JSON.stringify({ sub: user.email, name: user.name || "Analyst" }))}.token`;
 }
@@ -15,7 +17,7 @@ function persistFallbackUser(user) {
 
 export async function signupRequest(payload) {
   try {
-    const { data } = await api.post("/auth/signup", payload);
+    const { data } = await api.post(`${API}/auth/signup`, payload);
     return data;
   } catch (error) {
     if (error.response?.status && error.response.status !== 404) {
@@ -37,7 +39,7 @@ export async function signupRequest(payload) {
 
 export async function loginRequest(payload) {
   try {
-    const { data } = await api.post("/auth/login", payload);
+    const { data } = await api.post(`${API}/auth/login`, payload);
     return data;
   } catch (error) {
     if (error.response?.status && error.response.status !== 404) {
